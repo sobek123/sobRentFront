@@ -1,0 +1,153 @@
+.grid-container {
+  display: grid;
+  gap: 80px 100px;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+
+.grid-item1 {
+  background-image: url("./cars/Lexus_LS_500h-35.jpg");
+  background-repeat: no-repeat;
+  background-size: 380px 250px;
+  width: 380px;
+  height: 250px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 30px;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  /* width: 450px; */
+  transition: all 0.2s ease-in-out;
+}
+
+.grid-item1:hover
+{
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+}
+.grid-item2 {
+  background-image: url("./cars/424213.jpg");
+  background-repeat: no-repeat;
+  background-size: 400px 250px;
+  width: 400px;
+  height: 250px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 30px;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.grid-item2:hover
+{
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+.grid-item3 {
+  background-image: url("./cars/1141456.jpg");
+  background-repeat: no-repeat;
+  background-size: 380px 250px;
+  width: 380px;
+  height: 250px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 30px;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.grid-item3:hover
+{
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+.grid-item4 {
+  background-image: url("./cars/2023-bmw-3-series-14-ed5a2154052.webp");
+  background-repeat: no-repeat;
+  background-size: 380px 250px;
+  width: 380px;
+  height: 250px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 30px;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.grid-item4:hover
+{
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+.grid-item5 {
+  background-image: url("./cars/audi-q5-cennik-2022-otwarcie.jpg");
+  background-repeat: no-repeat;
+  background-size: 400px 250px;
+  width: 400px;
+  height: 250px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 30px;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.grid-item5:hover
+{
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+.grid-item6 {
+  background-image: url("./cars/5cd94c4c57502a426b2fbc0e.jpg");
+  background-repeat: no-repeat;
+  background-size: 380px 250px;
+  width: 380px;
+  height: 250px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 30px;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.grid-item6:hover
+{
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+.link:link{
+  text-decoration: none;
+  color: black
+}
+
+.link:visited{
+  color: black
+
+}
+
+.link:hover{
+  color: black
+}
+
+.link:active{
+  color: black
+}
+
+
+

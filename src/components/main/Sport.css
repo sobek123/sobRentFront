@@ -1,0 +1,36 @@
+.grid-container {
+  display: grid;
+  gap: 30px 0px;
+  grid-template-columns: auto auto auto;
+
+}
+
+#buttons
+{
+    width:100%;
+    text-align: center;
+}
+.btn
+{
+    display: inline-block;
+    margin-right: 10%;
+    margin-bottom: 15px;
+}
+
+input {
+  display: inline-block;
+  
+  position: relative;
+  margin-right: 8px;
+ 
+}
+
+label {
+  display: inline-block;
+ margin-right: 6px;
+}
+
+select{
+ margin-right: 8px;
+
+}
