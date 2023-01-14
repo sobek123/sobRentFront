@@ -30,17 +30,17 @@ export function AddWorker(){
     const navigaye = useNavigate()
     const [passwordScore,setPasswordScore] = useState()
     const onSubmit = (values) => {
-        console.log(values)
+        (values)
         UserService.saveWorker(values)
         .then((response) => {
-        console.log(response);
+        (response);
         navigaye("/pracownicy");
         document.getElementById("form").hidden = false
 
         // return <Successful></Successful>
         })
         .catch((error) => {
-        console.log(error);
+        (error);
         });
       }
     // const { password } = this.state;
@@ -77,9 +77,9 @@ export function AddWorker(){
                                 setEmail(response.data)
                             })
                             .catch((error) => {
-                                console.log(error);
+                                (error);
                             });
-                            // console.log(response)
+                            // (response)
 
                             return !email
                             })
@@ -101,7 +101,7 @@ export function AddWorker(){
                             .then(response =>{
                                 setPhoneNumber(response.data)
                             })
-                            .catch(error => console.log(error))
+                            .catch(error => (error))
 
                             return !phoneNumber
                         })
@@ -124,7 +124,7 @@ export function AddWorker(){
                             .then(response =>{
                                 setPesel(response.data)
                             })
-                            .catch(error => console.log(error))
+                            .catch(error => (error))
 
                             return !pesel
                           })

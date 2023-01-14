@@ -77,14 +77,14 @@ export function Comfort(){
       setLoading(true);
       try {
         const user = await AuthService.getCurrentUser();
-        console.log("u"+user)
+        ("u"+user)
         const response = await UserService.findByEmail(user.email)
         setUser(response.data);
-        console.log(user)
-        user.roles.map(e => console.log(e.name))
-        console.log("Halo"+response.data)
+        (user)
+        user.roles.map(e => (e.name))
+        ("Halo"+response.data)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -112,12 +112,12 @@ export function Comfort(){
     const fetchData = async () => {
       setLoading(true);
       try {
-        console.log(brand)
+        (brand)
         const response = await CarService.getModelsByBrand(brand, 'KOMFORTOWE');
         setModels(response.data);
-        console.log("m"+response.data)
+        ("m"+response.data)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -198,14 +198,14 @@ export function Comfort(){
         _DATA = response.data.filter(el => el.category === 'KOMFORTOWE')
         }
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
     fetchData();
   }, [selectedOption]);
 
-  console.log("Mo"+models)
+  ("Mo"+models)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -225,7 +225,7 @@ export function Comfort(){
         const response6 = await CarService.getYears();
         setYears(response6.data); 
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -264,7 +264,7 @@ export function Comfort(){
             }
         }else if (ob.brand == '' && ob.transmission == '' && ob.petrol != '' && ob.year == '' && ob.category == '' && ob.numberOfSeats == '') {
           const response = await CarService.getByPetrol(ob.petrol)
-          console.log("Halo")
+          ("Halo")
           const fil = response.data.filter(el => el.category === 'KOMFORTOWE')
           if(ob.model !== ''){
             const f = fil.filter(car => car.model === ob.model)
@@ -1049,7 +1049,7 @@ export function Comfort(){
           _DATA = response.data
         }
       } catch (error) {
-        console.log(error);
+        (error);
       }
   
       setLoading(false);
@@ -1116,9 +1116,9 @@ export function Comfort(){
         setCars(fil)
         setFilteredData(fil)
         _DATA = fil
-        console.log("D"+_DATA)  
+        ("D"+_DATA)  
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -1174,7 +1174,7 @@ export function Comfort(){
                 })}
                 onSubmit={
                   fields => {
-                    console.log(fields)
+                    (fields)
                     
                     setOb(fields)
                   }

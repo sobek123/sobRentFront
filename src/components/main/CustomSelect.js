@@ -10,7 +10,7 @@ export default function SelectField(props) {
 
   const onChange = (value) => {
     setValue(value);
-    console.log(value)
+    (value)
     updateAdditionals(value)
   };
 

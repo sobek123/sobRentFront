@@ -50,7 +50,7 @@ export function Workers(){
           setFilteredData(response.data);
         }
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -60,7 +60,7 @@ export function Workers(){
   const [wordEntered, setWordEntered] = useState(null);
 
   const scrollToTop = () => {
-    console.log("h")
+    ("h")
     window.scroll({
       top: 0,
       behavior: 'smooth'
@@ -74,9 +74,9 @@ export function Workers(){
         setUsers(response.data)
         setFilteredData(response.data)
         // setShowHook(showTab)
-        console.log(response.data)
+        (response.data)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -110,13 +110,13 @@ export function Workers(){
         setLoading(true);
         try {
           const response = await UserService.getWorkers()
-          console.log(response.data)
+          (response.data)
           const fil = response.data.filter(el => el.id !== currentUser.id)
           setUsers(fil);
           setFilteredData(fil)
-          console.log(fil)
+          (fil)
         } catch (error) {
-          console.log(error);
+          (error);
         }
         setLoading(false);
       };
@@ -150,7 +150,7 @@ export function Workers(){
           setFilteredData(newA)
       })
       .catch((error) => {
-      console.log(error);
+      (error);
       });
         
     }
@@ -161,7 +161,7 @@ export function Workers(){
       user.enabled = false
       UserService.updateUser(user,user.id)
       .then((response) => {
-      console.log(response);
+      (response);
           // const tab = users
           // for(let i=0;i<tab.length;i++){
           //   if(tab[i].id == user.id){
@@ -183,7 +183,7 @@ export function Workers(){
           setFilteredData(newA)
       })
       .catch((error) => {
-      console.log(error);
+      (error);
       });
       
       // window.onload
@@ -200,7 +200,7 @@ export function Workers(){
     });
   };
 const handleDelete = (id) => {
-  console.log("halo")
+  ("halo")
     handleDialog("Czy na pewno chcesz usunąć tego pracownika?", true);
     idProductRef.current = id;
   };
@@ -208,13 +208,13 @@ const handleDelete = (id) => {
   const areUSureDelete = (choose) => {
     if (choose) {
         UserService.deleteUser(idProductRef.current).then(response => { 
-          console.log(response)
+          (response)
           setUsers(users.filter((user) => {
             return user.id !== idProductRef.current;
         }))
         })
         .catch(error => {
-            console.log(error.response)
+            (error.response)
         });
         
       setFilteredData(users.filter((user) => {
@@ -238,14 +238,14 @@ const handleDelete = (id) => {
       setLoading(true);
       try {
         const user = await AuthService.getCurrentUser();
-        console.log("u"+user)
+        ("u"+user)
         const response = await UserService.findByEmail(user.email)
         setCurrentUser(response.data);
-        console.log(user)
-        // user.roles.map(e => console.log(e.name))
-        console.log("Halo"+response.data.role)
+        (user)
+        // user.roles.map(e => (e.name))
+        ("Halo"+response.data.role)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };

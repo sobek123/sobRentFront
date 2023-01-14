@@ -96,14 +96,14 @@ export function Exclusive(){
       setLoading(true);
       try {
         const user = await AuthService.getCurrentUser();
-        console.log("u"+user)
+        ("u"+user)
         const response = await UserService.findByEmail(user.email)
         setUser(response.data);
-        console.log(user)
-        user.roles.map(e => console.log(e.name))
-        console.log("Halo"+response.data)
+        (user)
+        user.roles.map(e => (e.name))
+        ("Halo"+response.data)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -114,12 +114,12 @@ export function Exclusive(){
     const fetchData = async () => {
       setLoading(true);
       try {
-        console.log(brand)
+        (brand)
         const response = await CarService.getModelsByBrand(brand,'EKSKLUZYWNE');
         setModels(response.data);
-        console.log("m"+response.data)
+        ("m"+response.data)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -200,14 +200,14 @@ export function Exclusive(){
         _DATA = response.data.filter(el => el.category === 'EKSKLUZYWNE')
         }
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
     fetchData();
   }, [selectedOption]);
 
-  console.log("Mo"+models)
+  ("Mo"+models)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -227,7 +227,7 @@ export function Exclusive(){
         const response6 = await CarService.getYears();
         setYears(response6.data); 
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -275,7 +275,7 @@ if(cars != null){
             }
         }else if (ob.brand == '' && ob.transmission == '' && ob.petrol != '' && ob.year == '' && ob.category == '' && ob.numberOfSeats == '') {
           const response = await CarService.getByPetrol(ob.petrol)
-          console.log("Halo")
+          ("Halo")
           const fil = response.data.filter(el => el.category === 'EKSKLUZYWNE')
           if(ob.model !== ''){
             const f = fil.filter(car => car.model === ob.model)
@@ -1060,7 +1060,7 @@ if(cars != null){
           _DATA = response.data
         }
       } catch (error) {
-        console.log(error);
+        (error);
       }
   
       setLoading(false);
@@ -1128,11 +1128,11 @@ if(cars != null){
         setCars(fil)
         setFilteredData(fil)
         _DATA = fil
-        console.log("D"+_DATA)
+        ("D"+_DATA)
         // setShowHook(showTab)
         
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -1188,7 +1188,7 @@ if(cars != null){
                 })}
                 onSubmit={
                   fields => {
-                    console.log(fields)
+                    (fields)
                     
                     setOb(fields)
                   }

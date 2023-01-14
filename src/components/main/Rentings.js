@@ -38,14 +38,14 @@ export function Rentings(){
       setLoading(true);
       try {
         const user = await AuthService.getCurrentUser();
-        console.log("u"+user)
+        ("u"+user)
         const response = await UserService.findByEmail(user.email)
         setUser(response.data);
-        console.log(user)
-        user.roles.map(e => console.log(e.name))
-        console.log("Halo"+response.data)
+        (user)
+        user.roles.map(e => (e.name))
+        ("Halo"+response.data)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -99,29 +99,29 @@ export function Rentings(){
 const handleChangeFault = event => {
   setFault(event.target.value);
 
-  console.log('value is:', event.target.value);
+  ('value is:', event.target.value);
 };
 
 const handleChangeFault2 = event => {
   setFault2(event.target.value);
 
-  console.log('value is:', event.target.value);
+  ('value is:', event.target.value);
 };
 const [modalShow, setModalShow] = useState(false);
   const [modalShow2, setModalShow2] = useState(false);
   const handleFaultAccept = (car,index) => {
     
     car.fault = fault
-    console.log(car)
+    (car)
     CarService.updateCar(car,car.id)
     .then((response) => {
-    console.log(response);
+    (response);
     // navigaye("/sport");
     <Success show={modalShow} onHide={() => setModalShow(false)} text={ <span><h5><b>GRATULACJE</b></h5>
             Usterka została poprawnie zgłoszona!</span>}/>
     })
     .catch((error) => {
-    console.log(error);
+    (error);
     });
     document.getElementById("exitButton"+index).hidden = true
     document.getElementById("addButton"+index).hidden = true
@@ -135,16 +135,16 @@ const [modalShow, setModalShow] = useState(false);
   const handleFaultAccept2 = (car,index) => {
     
     car.fault = fault2
-    console.log(car)
+    (car)
     CarService.updateCar(car,car.id)
     .then((response) => {
-    console.log(response);
+    (response);
     // navigaye("/sport");
     <Success show={modalShow2} onHide={() => setModalShow2(false)} text={ <span><h5><b>GRATULACJE</b></h5>
             Usterka została poprawnie zgłoszona!</span>}/>
     })
     .catch((error) => {
-    console.log(error);
+    (error);
     });
     document.getElementById("exitButton2"+index).hidden = true
     document.getElementById("addButton2"+index).hidden = true
@@ -158,21 +158,21 @@ const [modalShow, setModalShow] = useState(false);
       try {
         // const response = await UserService.getUserById(2)
         // setUser(response.data);
-        // // console.log(user.orders.length())
-        // console.log(response.data)
-        console.log(user.id)
+        // // (user.orders.length())
+        // (response.data)
+        (user.id)
         const response2 = await FullOrderService.getActiveOrdersUser(user.id)
         const g = response2.data.map(el => {if(el.additional == undefined) el.additional = null})
-        console.log(response2.data)
+        (response2.data)
         setActiveOrders(response2.data);
-        // console.log(user.orders.length())
-        console.log(response2.data)
+        // (user.orders.length())
+        (response2.data)
         const response3 = await FullOrderService.getHistoricOrdersUser(user.id)
         setHistoricOrders(response3.data);
-        // console.log(user.orders.length())
-        console.log(response3.data)
+        // (user.orders.length())
+        (response3.data)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -185,11 +185,11 @@ const [modalShow, setModalShow] = useState(false);
       try {
         const response = await FullOrderService.getFullOrders()
         
-        // console.log(user.orders.length())
+        // (user.orders.length())
         setFullOrders(response.data.filter(order => order.user.email === user.email))
-        console.log(response.data.filter(order => order.user.email === user.email))
+        (response.data.filter(order => order.user.email === user.email))
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -217,7 +217,7 @@ const [modalShow, setModalShow] = useState(false);
   function formatD(date){
     let m =  date.getMonth()+1
     var min = ""
-    console.log(min)
+    (min)
     if(date.getMinutes() < 10){
       min = "0"+date.getMinutes()
     }else{

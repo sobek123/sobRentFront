@@ -24,7 +24,7 @@ const ExpandMore = styled((props) => {
   function formatD(date){
     let m =  date.getMonth()+1
     var min = ""
-    console.log(min)
+    (min)
     if(date.getMinutes() < 10){
       min = "0"+date.getMinutes()
     }else{
@@ -37,7 +37,7 @@ export function GroupMesage({props}){
     const [expandedId, setExpandedId] = React.useState(-1);
 
   const scrollToTop = () => {
-    console.log("h")
+    ("h")
     window.scroll({
       top: 0,
       behavior: 'smooth'
@@ -47,7 +47,7 @@ export function GroupMesage({props}){
   const handleExpandClick = i => {
     setExpandedId(expandedId === i ? -1 : i);
   };
-  console.log("Witam")
+  ("Witam")
     return props.messages.filter(msg => msg.opened === true).map((message, i) => (
         <Card  key={message.id}>
           <CardContent >
@@ -81,14 +81,14 @@ export function GroupMesage({props}){
                         .required('Wiadomość jest wymagana')
                 })}
                 onSubmit={fields => {
-                    console.log(fields)
+                    (fields)
                     // fields.acceptTerms = null
                     ContactService.respond(fields).then((response) => {
-                        console.log(response);
+                        (response);
                         // navigaye("/sport");
                         })
                         .catch((error) => {
-                        console.log(error);
+                        (error);
                         });
                 }}>
                 {({ dirty, isValid, values, handleChange, handleBlur,errors,touched }) => {

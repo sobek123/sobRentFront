@@ -12,7 +12,7 @@ class OrderService{
     }
 
     deleteOrder(id){
-        console.log(id)
+        (id)
         return axios.delete(ORDER_API_BASE_URL + "/deleteOrder/" + id);
     }
 

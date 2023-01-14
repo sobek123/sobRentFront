@@ -29,7 +29,7 @@ const options = [
   
   
 export function Group(props){
-    console.log(props.orders)
+    (props.orders)
     const [dialog, setDialog] = useState({
         message: "",
         isLoading: false,
@@ -49,10 +49,10 @@ export function Group(props){
       const areUSureDelete = (choose) => {
         if (choose) {
             FullOrderService.deleteFullOrder(idProductRef.current).then(response => { 
-              console.log(response)
+              (response)
             })
             .catch(error => {
-                console.log(error.response)
+                (error.response)
             });
           setOrders(orders.filter((additional) => {
             return additional.id !== idProductRef.current;
@@ -93,10 +93,10 @@ export function Group(props){
       const areUSureDelete2 = (choose) => {
         if (choose) {
             OrderService.deleteOrder(idProductRef2.current).then(response => { 
-              console.log(response)
+              (response)
             })
             .catch(error => {
-                console.log(error.response)
+                (error.response)
             });
         //   setOrders(additionals.filter((additional) => {
         //     return additional.id !== idProductRef2.current;
@@ -121,21 +121,21 @@ export function Group(props){
             } else if (selectedOption.value === "Cena malejąco") {
                 const response1 = await FullOrderService.sortByPrizeDescending();
                 setOrders(response1.data);
-                console.log(response1.data)
+                (response1.data)
                 props.orders = response1.data
             } else if (selectedOption.value === "Data i godzina złożenia zamówienia rosnąco") {
               const response2 = await FullOrderService.sortByLaunchDateAscending();
               setOrders(response2.data);
-              console.log(response2.data)
+              (response2.data)
               props.orders = response2.data
             } else if (selectedOption.value === "Data i godzina złożenia zamówienia malejąco") {
               const response3 = await OrderService.sortByLaunchDateDescending();
               setOrders(response3.data);
-              console.log(response3.data)
+              (response3.data)
               props.orders = response3.data
             }
             } catch (error) {
-              console.log(error);
+              (error);
             }
             setLoading(false);
           };
@@ -167,9 +167,9 @@ export function Group(props){
         //         const response3 = await FullOrderService.getFullOrdersBackToday()
         //         setFilteredDataBackToday(response3.data);
         //         setFilteredData(response3.data)
-        //         // console.log(response.data)
+        //         // (response.data)
         //       } catch (error) {
-        //         console.log(error);
+        //         (error);
         //       }
         //       setLoading(false);
         //     };
@@ -215,13 +215,13 @@ export function Group(props){
             const fetchData = async () => {
               setLoading(true);
               try {
-                console.log(wordEntered)
+                (wordEntered)
                 const response = await FullOrderService.getByKeyword(wordEntered)  
                 props.orders = response.data
-                console.log("jh"+response.data)
-                console.log("fsfgsdg")
+                ("jh"+response.data)
+                ("fsfgsdg")
               } catch (error) {
-                console.log(error);
+                (error);
               }
               setLoading(false);
             };

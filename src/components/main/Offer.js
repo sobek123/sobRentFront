@@ -63,7 +63,7 @@ export function Offer(props){
   const {numberOfSeats} = useContext(CartContext)
   const navigate = useNavigate()
   const scrollToTop = () => {
-    console.log("h")
+    ("h")
     window.scroll({
       top: 0,
       behavior: 'smooth'
@@ -79,14 +79,14 @@ export function Offer(props){
       setLoading(true);
       try {
         const user = await AuthService.getCurrentUser();
-        console.log("u"+user)
+        ("u"+user)
         const response = await UserService.findByEmail(user.email)
         setUser(response.data);
-        console.log(user)
-        user.roles.map(e => console.log(e.name))
-        console.log("Halo"+response.data)
+        (user)
+        user.roles.map(e => (e.name))
+        ("Halo"+response.data)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -110,11 +110,11 @@ export function Offer(props){
     const fetchData = async () => {
       setLoading(true);
       try {
-        console.log(brand)
+        (brand)
         const response = await CarService.getModelsByBrand(brand);
         setModels(response.data);
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -135,76 +135,76 @@ export function Offer(props){
           const response = await CarService.sortByKmDescending();
           setCars(response.data);
           _DATA = response.data
-          console.log(response.data)
+          (response.data)
       } else if (selectedOption.value === "Moment obrotowy rosnąco") {
         const response = await CarService.sortByNmAscending();
         setCars(response.data);
         _DATA = response.data
-        console.log(response.data)
+        (response.data)
       } else if (selectedOption.value === "Moment obrotowy malejąco") {
         const response = await CarService.sortByNmDescending();
         setCars(response.data);
         _DATA = response.data
-        console.log(response.data)
+        (response.data)
       } else if (selectedOption.value === "Spalanie rosnąco") {
         const response = await CarService.sortByCombustionAscending();
         setCars(response.data);
         _DATA = response.data
-        console.log(response.data)
+        (response.data)
       } else if (selectedOption.value === "Spalanie malejąco") {
         const response = await CarService.sortByCombustionDescending();
         setCars(response.data);
         _DATA = response.data
-        console.log(response.data)}
+        (response.data)}
       else if (selectedOption.value === "Pojemność silnika rosnąco") {
         const response = await CarService.sortByEngineAscending();
         setCars(response.data);
         _DATA = response.data
-        console.log(response.data)}
+        (response.data)}
       else if (selectedOption.value === "Pojemność silnika malejąco") {
         const response = await CarService.sortByEngineDescending();
         setCars(response.data);
         _DATA = response.data
-        console.log(response.data)}
+        (response.data)}
       else if (selectedOption.value === "Kaucja rosnąco") {
         const response = await CarService.sortByDepositAscending();
         setCars(response.data);
         _DATA = response.data
-        console.log(response.data)}
+        (response.data)}
       else if (selectedOption.value === "Kaucja malejąco") {
         const response = await CarService.sortByDepositDescending();
         setCars(response.data);
         _DATA = response.data
-        console.log(response.data)}
+        (response.data)}
       else if (selectedOption.value === "Rok produkcji rosnąco") {
         const response = await CarService.sortByYearAscending();
         setCars(response.data);
         _DATA = response.data
-        console.log(response.data)}
+        (response.data)}
       else if (selectedOption.value === "Rok produkcji malejąco") {
         const response = await CarService.sortByYearDescending();
         setCars(response.data);
         _DATA = response.data
-        console.log(response.data)}
+        (response.data)}
       else if (selectedOption.value === "Liczba miejsc rosnąco") {
         const response = await CarService.sortByNumberOfSeatsAscending();
         setCars(response.data);
         _DATA = response.data
-        console.log(response.data)}
+        (response.data)}
       else if (selectedOption.value === "Liczba miejsc malejąco") {
         const response = await CarService.sortByNumberOfSeatsDescending();
         setCars(response.data);
         _DATA = response.data
-        console.log(response.data)}
+        (response.data)}
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
     fetchData();
   }, [selectedOption]);
 
-  console.log("KURA"+offer)
+  ("KURA"+offer)
   const [force,setForce] = useState(true)
 
   useEffect(() => {
@@ -220,9 +220,9 @@ export function Offer(props){
         setTransmissions(response4.data); 
         const response5 = await CarService.getBrands();
         setBrands(response5.data); 
-        // console.log(response.data)
+        // (response.data)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -240,7 +240,7 @@ useEffect(() => {
     try {
       if (ob.brand != '' && ob.transmission == '' && ob.petrol == '' && ob.year == '' && ob.category == '' && ob.numberOfSeats == 0) {
         const response = cars.filter(el => el.brand === ob.brand)
-        console.log("HALO"+response)
+        ("HALO"+response)
         if(ob.model !== ''){
           setCars(response.filter(el => el.model === ob.model))
           _DATA = response.filter(el => el.model === ob.model)
@@ -318,7 +318,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission == '' && ob.petrol == '' && ob.year == '' && ob.category == '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.brand === ob.brand).filter(el => el.numberOfSeats === ob.numberOfSeats)
         if(ob.model !== ''){
@@ -328,7 +328,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission == '' && ob.petrol == '' && ob.year == '' && ob.category != '' && ob.numberOfSeats == 0) {
         const response = cars.filter(el => el.brand === ob.brand).filter(el => el.category === ob.category)
         if(ob.model !== ''){
@@ -338,7 +338,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission == '' && ob.petrol == '' && ob.year != '' && ob.category == '' && ob.numberOfSeats == 0) {
         const response = cars.filter(el => el.brand === ob.brand).filter(el => el.year === ob.year)
         if(ob.model !== ''){
@@ -348,7 +348,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand == '' && ob.transmission == '' && ob.petrol != '' && ob.year == '' && ob.category == '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.petrol === ob.petrol).filter(el => el.numberOfSeats === ob.numberOfSeats)
         if(ob.model !== ''){
@@ -358,7 +358,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand == '' && ob.transmission != '' && ob.petrol != '' && ob.year == '' && ob.category == '' && ob.numberOfSeats == 0) {
         const response = cars.filter(el => el.petrol === ob.petrol).filter(el => el.transmission === ob.transmission)
         if(ob.model !== ''){
@@ -368,7 +368,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand == '' && ob.transmission == '' && ob.petrol != '' && ob.year == '' && ob.category != '' && ob.numberOfSeats == 0) {
         const response = cars.filter(el => el.petrol === ob.petrol).filter(el => el.category === ob.category)
         if(ob.model !== ''){
@@ -378,7 +378,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand == '' && ob.transmission == '' && ob.petrol != '' && ob.year != '' && ob.category == '' && ob.numberOfSeats == 0) {
         const response = cars.filter(el => el.petrol === ob.petrol).filter(el => el.year === ob.year)
         if(ob.model !== ''){
@@ -388,7 +388,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand == '' && ob.transmission != '' && ob.petrol == '' && ob.year == '' && ob.category == '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.transmission === ob.transmission)
         if(ob.model !== ''){
@@ -398,7 +398,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand == '' && ob.transmission == '' && ob.petrol == '' && ob.year == '' && ob.category != '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.category === ob.category)
         if(ob.model !== ''){
@@ -408,7 +408,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand == '' && ob.transmission == '' && ob.petrol == '' && ob.year != '' && ob.category == '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.year === ob.year)
         if(ob.model !== ''){
@@ -418,7 +418,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand == '' && ob.transmission != '' && ob.petrol == '' && ob.year == '' && ob.category != '' && ob.numberOfSeats == 0) {
         const response = cars.filter(el => el.transmission === ob.transmission).filter(el => el.category === ob.category)
         if(ob.model !== ''){
@@ -428,7 +428,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand == '' && ob.transmission != '' && ob.petrol == '' && ob.year != '' && ob.category == '' && ob.numberOfSeats == 0) {
         const response = cars.filter(el => el.transmission === ob.transmission).filter(el => el.year === ob.year)
         if(ob.model !== ''){
@@ -438,7 +438,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand == '' && ob.transmission == '' && ob.petrol == '' && ob.year != '' && ob.category != '' && ob.numberOfSeats == 0) {
         const response = cars.filter(el => el.category === ob.category).filter(el => el.year === ob.year)
         if(ob.model !== ''){
@@ -448,7 +448,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission != '' && ob.petrol != '' && ob.year != '' && ob.category != '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.petrol === ob.petrol).filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.brand === ob.brand).filter(el => el.transmission === ob.transmission).filter(el => el.category === ob.category).filter(el => el.year === ob.year)
         if(ob.model !== ''){
@@ -458,7 +458,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission != '' && ob.petrol != '' && ob.year == '' && ob.category != '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.petrol === ob.petrol).filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.brand === ob.brand).filter(el => el.transmission === ob.transmission).filter(el => el.category === ob.category)
         if(ob.model !== ''){
@@ -468,7 +468,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission != '' && ob.petrol != '' && ob.year != '' && ob.category == '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.petrol === ob.petrol).filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.brand === ob.brand).filter(el => el.transmission === ob.transmission).filter(el => el.year === ob.year)
         if(ob.model !== ''){
@@ -478,7 +478,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission == '' && ob.petrol != '' && ob.year != '' && ob.category != '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.petrol === ob.petrol).filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.brand === ob.brand).filter(el => el.category === ob.category).filter(el => el.year === ob.year)
         if(ob.model !== ''){
@@ -488,7 +488,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission != '' && ob.petrol == '' && ob.year != '' && ob.category != '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.transmission === ob.transmission).filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.brand === ob.brand).filter(el => el.category === ob.category).filter(el => el.year === ob.year)
         if(ob.model !== ''){
@@ -498,7 +498,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand == '' && ob.transmission != '' && ob.petrol != '' && ob.year != '' && ob.category != '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.transmission === ob.transmission).filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.petrol === ob.petrol).filter(el => el.category === ob.category).filter(el => el.year === ob.year)
         if(ob.model !== ''){
@@ -508,7 +508,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission != '' && ob.petrol != '' && ob.year != '' && ob.category != '' && ob.numberOfSeats == 0) {
         const response = cars.filter(el => el.transmission === ob.transmission).filter(el => el.brand === ob.brand).filter(el => el.petrol === ob.petrol).filter(el => el.category === ob.category).filter(el => el.year === ob.year)
         if(ob.model !== ''){
@@ -518,7 +518,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission == '' && ob.petrol != '' && ob.year == '' && ob.category == '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.brand === ob.brand).filter(el => el.petrol === ob.petrol)
         if(ob.model !== ''){
@@ -528,7 +528,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission == '' && ob.petrol == '' && ob.year != '' && ob.category == '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.brand === ob.brand).filter(el => el.year === ob.year)
         if(ob.model !== ''){
@@ -538,7 +538,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission != '' && ob.petrol == '' && ob.year == '' && ob.category == '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.brand === ob.brand).filter(el => el.transmission === ob.transmission)
         if(ob.model !== ''){
@@ -548,7 +548,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission == '' && ob.petrol == '' && ob.year == '' && ob.category != '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.brand === ob.brand).filter(el => el.category === ob.category)
         if(ob.model !== ''){
@@ -558,7 +558,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand == '' && ob.transmission == '' && ob.petrol != '' && ob.year != '' && ob.category == '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.petrol === ob.petrol).filter(el => el.year === ob.year)
         if(ob.model !== ''){
@@ -568,7 +568,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand == '' && ob.transmission == '' && ob.petrol != '' && ob.year == '' && ob.category != '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.petrol === ob.petrol).filter(el => el.category === ob.category)
         if(ob.model !== ''){
@@ -578,7 +578,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand == '' && ob.transmission != '' && ob.petrol != '' && ob.year == '' && ob.category == '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.petrol === ob.petrol).filter(el => el.transmission === ob.transmission)
         if(ob.model !== ''){
@@ -588,7 +588,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand == '' && ob.transmission != '' && ob.petrol == '' && ob.year != '' && ob.category == '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.year === ob.year).filter(el => el.transmission === ob.transmission)
         if(ob.model !== ''){
@@ -598,7 +598,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand == '' && ob.transmission == '' && ob.petrol == '' && ob.year != '' && ob.category != '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.year === ob.year).filter(el => el.category === ob.category)
         if(ob.model !== ''){
@@ -608,7 +608,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand == '' && ob.transmission != '' && ob.petrol == '' && ob.year == '' && ob.category != '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.transmission === ob.transmission).filter(el => el.category === ob.category)
         if(ob.model !== ''){
@@ -618,7 +618,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission == '' && ob.petrol != '' && ob.year != '' && ob.category == '' && ob.numberOfSeats == 0) {
         const response = cars.filter(el => el.petrol === ob.petrol).filter(el => el.year === ob.year).filter(el => el.brand === ob.brand)
         if(ob.model !== ''){
@@ -628,7 +628,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission != '' && ob.petrol != '' && ob.year == '' && ob.category == '' && ob.numberOfSeats == 0) {
         const response = cars.filter(el => el.petrol === ob.petrol).filter(el => el.transmission === ob.transmission).filter(el => el.brand === ob.brand)
         if(ob.model !== ''){
@@ -638,7 +638,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission == '' && ob.petrol != '' && ob.year == '' && ob.category != '' && ob.numberOfSeats == 0) {
         const response = cars.filter(el => el.petrol === ob.petrol).filter(el => el.category === ob.category).filter(el => el.brand === ob.brand)
         if(ob.model !== ''){
@@ -648,7 +648,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission != '' && ob.petrol == '' && ob.year != '' && ob.category == '' && ob.numberOfSeats == 0) {
         const response = cars.filter(el => el.year === ob.year).filter(el => el.transmission === ob.transmission).filter(el => el.brand === ob.brand)
         if(ob.model !== ''){
@@ -658,7 +658,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission == '' && ob.petrol == '' && ob.year != '' && ob.category != '' && ob.numberOfSeats == 0) {
         const response = cars.filter(el => el.year === ob.year).filter(el => el.category === ob.category).filter(el => el.brand === ob.brand)
         if(ob.model !== ''){
@@ -668,7 +668,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission != '' && ob.petrol == '' && ob.year == '' && ob.category != '' && ob.numberOfSeats == 0) {
         const response = cars.filter(el => el.transmission === ob.transmission).filter(el => el.category === ob.category).filter(el => el.brand === ob.brand)
         if(ob.model !== ''){
@@ -678,7 +678,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand == '' && ob.transmission != '' && ob.petrol != '' && ob.year != '' && ob.category == '' && ob.numberOfSeats == 0) {
         const response = cars.filter(el => el.transmission === ob.transmission).filter(el => el.year === ob.year).filter(el => el.petrol === ob.petrol)
         if(ob.model !== ''){
@@ -688,7 +688,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand == '' && ob.transmission == '' && ob.petrol != '' && ob.year != '' && ob.category != '' && ob.numberOfSeats == 0) {
         const response = cars.filter(el => el.category === ob.category).filter(el => el.year === ob.year).filter(el => el.petrol === ob.petrol)
         if(ob.model !== ''){
@@ -698,7 +698,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand == '' && ob.transmission != '' && ob.petrol != '' && ob.year == '' && ob.category != '' && ob.numberOfSeats == 0) {
         const response = cars.filter(el => el.category === ob.category).filter(el => el.transmission === ob.transmission).filter(el => el.petrol === ob.petrol)
         if(ob.model !== ''){
@@ -708,7 +708,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand == '' && ob.transmission != '' && ob.petrol == '' && ob.year != '' && ob.category != '' && ob.numberOfSeats == 0) {
         const response = cars.filter(el => el.category === ob.category).filter(el => el.transmission === ob.transmission).filter(el => el.year === ob.year)
         if(ob.model !== ''){
@@ -718,7 +718,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission == '' && ob.petrol != '' && ob.year != '' && ob.category == '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.petrol === ob.petrol).filter(el => el.brand === ob.brand).filter(el => el.year === ob.year)
         if(ob.model !== ''){
@@ -728,7 +728,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission != '' && ob.petrol != '' && ob.year == '' && ob.category == '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.petrol === ob.petrol).filter(el => el.brand === ob.brand).filter(el => el.transmission === ob.transmission)
         if(ob.model !== ''){
@@ -738,7 +738,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission == '' && ob.petrol != '' && ob.year == '' && ob.category != '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.petrol === ob.petrol).filter(el => el.brand === ob.brand).filter(el => el.category === ob.category)
         if(ob.model !== ''){
@@ -748,7 +748,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand == '' && ob.transmission != '' && ob.petrol != '' && ob.year != '' && ob.category == '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.petrol === ob.petrol).filter(el => el.year === ob.year).filter(el => el.transmission === ob.transmission)
         if(ob.model !== ''){
@@ -758,7 +758,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand == '' && ob.transmission == '' && ob.petrol != '' && ob.year != '' && ob.category != '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.petrol === ob.petrol).filter(el => el.year === ob.year).filter(el => el.category === ob.category)
         if(ob.model !== ''){
@@ -768,7 +768,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand == '' && ob.transmission != '' && ob.petrol != '' && ob.year == '' && ob.category != '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.petrol === ob.petrol).filter(el => el.transmission === ob.transmission).filter(el => el.category === ob.category)
         if(ob.model !== ''){
@@ -778,7 +778,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand == '' && ob.transmission != '' && ob.petrol == '' && ob.year != '' && ob.category != '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.year === ob.year).filter(el => el.transmission === ob.transmission).filter(el => el.category === ob.category)
         if(ob.model !== ''){
@@ -788,7 +788,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission != '' && ob.petrol == '' && ob.year == '' && ob.category != '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.brand === ob.brand).filter(el => el.transmission === ob.transmission).filter(el => el.category === ob.category)
         if(ob.model !== ''){
@@ -798,7 +798,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission == '' && ob.petrol == '' && ob.year != '' && ob.category != '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.brand === ob.brand).filter(el => el.year === ob.year).filter(el => el.category === ob.category)
         if(ob.model !== ''){
@@ -808,7 +808,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission != '' && ob.petrol == '' && ob.year != '' && ob.category == '' && ob.numberOfSeats != 0) {
         const response = cars.filter(el => el.numberOfSeats === ob.numberOfSeats).filter(el => el.brand === ob.brand).filter(el => el.year === ob.year).filter(el => el.transmission === ob.transmission)
         if(ob.model !== ''){
@@ -818,7 +818,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission != '' && ob.petrol != '' && ob.year != '' && ob.category == '' && ob.numberOfSeats == 0) {
         const response = cars.filter(el => el.year === ob.year).filter(el => el.brand === ob.brand).filter(el => el.petrol === ob.petrol).filter(el => el.transmission === ob.transmission)
         if(ob.model !== ''){
@@ -828,7 +828,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission == '' && ob.petrol != '' && ob.year != '' && ob.category != '' && ob.numberOfSeats == 0) {
         const response = cars.filter(el => el.year === ob.year).filter(el => el.brand === ob.brand).filter(el => el.petrol === ob.petrol).filter(el => el.category === ob.category)
         if(ob.model !== ''){
@@ -838,7 +838,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission != '' && ob.petrol == '' && ob.year != '' && ob.category != '' && ob.numberOfSeats == 0) {
         const response = cars.filter(el => el.year === ob.year).filter(el => el.brand === ob.brand).filter(el => el.transmission === ob.transmission).filter(el => el.category === ob.category)
         if(ob.model !== ''){
@@ -848,7 +848,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand != '' && ob.transmission != '' && ob.petrol != '' && ob.year == '' && ob.category != '' && ob.numberOfSeats == 0) {
         const response = cars.filter(el => el.petrol === ob.petrol).filter(el => el.brand === ob.brand).filter(el => el.transmission === ob.transmission).filter(el => el.category === ob.category)
         if(ob.model !== ''){
@@ -858,7 +858,7 @@ useEffect(() => {
         else{
           setCars(response);
           _DATA = response
-          console.log(response)}}
+          (response)}}
       else if (ob.brand == '' && ob.transmission != '' && ob.petrol != '' && ob.year != '' && ob.category != '' && ob.numberOfSeats == 0) {
         const response = cars.filter(el => el.petrol === ob.petrol).filter(el => el.year === ob.year).filter(el => el.transmission === ob.transmission).filter(el => el.category === ob.category)
         if(ob.model !== ''){
@@ -868,13 +868,13 @@ useEffect(() => {
         else{
         setCars(response);
         _DATA = response
-        console.log(response)}}
+        (response)}}
         else if (ob.brand == '' && ob.transmission == '' && ob.petrol == '' && ob.year == '' && ob.category == '' && ob.numberOfSeats == 0) {
           setCars(offer);
           _DATA = offer
         }
     } catch (error) {
-      console.log(error);
+      (error);
     }
 
     setLoading(false);
@@ -887,7 +887,7 @@ useEffect(() => {
     setPrize(prize)
     setCar(car)
     const fil = cars.filter(el => el.id !== car.id)
-    console.log(fil)
+    (fil)
     // updateOffer(fil,startDate,endDate)
     setCars(fil)
     setFilteredData(fil)
@@ -930,7 +930,7 @@ useEffect(() => {
   const reset = () => {
     
     setCars(initialCars);
-    console.log(initialCars)
+    (initialCars)
     _DATA = initialCars
     updateBrand('')
   }
@@ -944,7 +944,7 @@ useEffect(() => {
         setInitialCars(offer)
         setCars(offer)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -955,7 +955,7 @@ useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        console.log(id)
+        (id)
         if(id != null){
           CarService.getCarsByStartDateAndEndDateAndRentPlaceAndEndDate(startDate, endDate)
           .then((response) => {
@@ -968,7 +968,7 @@ useEffect(() => {
     
           })
           .catch((error) => {
-          console.log(error);
+          (error);
           });
           // setCars(props.cars)
           // _DATA = props.cars
@@ -985,14 +985,14 @@ useEffect(() => {
     
           })
           .catch((error) => {
-          console.log(error);
+          (error);
           });
         }
         // _DATA = offer
         // setInitialCars(offer)
         // setCars(offer)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -1014,9 +1014,9 @@ useEffect(() => {
         setFilteredData(response.data)
         _DATA = response.data
 
-        console.log(response.data)
+        (response.data)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -1076,7 +1076,7 @@ useEffect(() => {
                 })}
                 onSubmit={
                   fields => {
-                    console.log(fields)
+                    (fields)
                     setOb(fields)
                   }
                 }
@@ -1311,9 +1311,9 @@ useEffect(() => {
        )}
     )}
     <OrderModal show={modalShow} onHide={() => {
-      console.log("IDKURWO"+id)
+      ("IDKURWO"+id)
     //    if(cars.length !== offer.length){
-    //     console.log("wszedlem")
+    //     ("wszedlem")
     //      const fil = cars.filter(el => el.id !== id)
     //    setCars(offer)
     //    _DATA = offer
@@ -1323,7 +1323,7 @@ useEffect(() => {
      
       
     //  }else{
-    //   console.log(offer)
+    //   (offer)
     //    setCars(offer)
     //    _DATA = offer
     // //  updateOffer(cars)

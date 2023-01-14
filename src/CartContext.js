@@ -20,7 +20,7 @@ export function CartProvider({children}){
     }
 
     const updateId = (id) => {
-        console.log("CART"+id)
+        ("CART"+id)
         setId(id)
     }
 
@@ -33,15 +33,15 @@ export function CartProvider({children}){
     }
 
     const updateOffer = (cars, start,end) => {
-        console.log(cars)
+        (cars)
         setOffer(cars)
-        console.log(offer)
+        (offer)
         setStartDate(start)
         setEndDate(end)
     }
 
     const updateAdditionals = (additionalss) => {
-        console.log("cart"+additionalss)
+        ("cart"+additionalss)
         setAdditionalss(additionalss)
     }
     
@@ -54,15 +54,15 @@ export function CartProvider({children}){
     }
 
     const deleteFromCart = (idd) => {
-        console.log("id"+idd)
-        console.log("Oferta"+offer)
+        ("id"+idd)
+        ("Oferta"+offer)
         setItems(items.filter(item => {return item.car.id != idd}))
-        console.log(offer.filter(i => {return i.id !== idd}))
+        (offer.filter(i => {return i.id !== idd}))
         CarService.getCarById(idd).then(response => offer.unshift(response.data))
-        console.log(offer)
+        (offer)
         
         // setOffer()
-        console.log("Ofertapo"+offer)
+        ("Ofertapo"+offer)
 
     }
 

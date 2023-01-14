@@ -29,14 +29,14 @@ export function ForgotPassword(){
                 })}
                 onSubmit={fields => {
                     UserService.forgotPassword({ password: fields.newPassword, token: window.location.pathname.slice(22)}).then((response) => {
-                        console.log(response);
+                        (response);
                         document.getElementById("false").hidden = false
                         setTimeout( () => 
                             navigaye("/logowanie")
                         ,4000);
                         })
                         .catch((error) => {
-                        console.log(error);
+                        (error);
                         });
                 }}>
               {({ dirty, isValid, values, handleChange, handleBlur, errors, status, touched }) => {

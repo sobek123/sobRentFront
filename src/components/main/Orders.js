@@ -53,10 +53,10 @@ const handleDelete = (id) => {
   const areUSureDelete = (choose) => {
     if (choose) {
         FullOrderService.deleteFullOrder(idProductRef.current).then(response => { 
-          console.log(response)
+          (response)
         })
         .catch(error => {
-            console.log(error.response)
+            (error.response)
         });
       setOrders(orders.filter((additional) => {
         return additional.id !== idProductRef.current;}))
@@ -113,77 +113,77 @@ const handleDelete2 = (id,p) => {
 
   const areUSureDelete2 = (choose) => {
     if (choose) {
-      console.log(idProductRef2)
+      (idProductRef2)
       OrderService.getOrderById(idProductRef2.current)
       .then(response3 => {
         // setPriz(prie - response3.data.prize)
-        // console.log(response3.data.prize)
-        // console.log(prie)
+        // (response3.data.prize)
+        // (prie)
         let res = priz - response3.data.priz
         document.getElementById('pr').innerHTML = "<h6><b>Cena całkowita: "+res+"zł</b><h6>"
       })
-      .catch( (error) => console.log(error.response))
+      .catch( (error) => (error.response))
         OrderService.deleteOrder(idProductRef2.current).then(response => { 
          
-          // console.log(respons3.data.prize)
-          console.log(response)
+          // (respons3.data.prize)
+          (response)
         })
         .catch(error => {
           // const respons3 = OrderService.getOrderById(idProductRef2.current)
-          // console.log(respons3.data.prize)
-            console.log(error.response)
+          // (respons3.data.prize)
+            (error.response)
         });
         for(let i =0 ;i< orders.length; i++){
-          console.log(orders[i].orders)
+          (orders[i].orders)
           const h = orders[i].orders.filter((additional) => {
             return additional.id !== idProductRef2.current})
           orders[i].orders = h
         }
         setOrders(orders)
         for(let i =0 ;i< orders.length; i++){
-          console.log(orders[i].orders)
+          (orders[i].orders)
           const h = orders[i].orders.filter((additional) => {
             return additional.id !== idProductRef2.current})
           orders[i].orders = h
         }
         setFilteredData(orders)
         for(let i =0 ;i< backOrders.length; i++){
-          console.log(backOrders[i].orders)
+          (backOrders[i].orders)
           const h = backOrders[i].orders.filter((additional) => {
             return additional.id !== idProductRef2.current})
             backOrders[i].orders = h
         }
         setBackOrders(backOrders)
         for(let i =0 ;i< backOrders.length; i++){
-          console.log(backOrders[i].orders)
+          (backOrders[i].orders)
           const h = backOrders[i].orders.filter((additional) => {
             return additional.id !== idProductRef2.current})
             backOrders[i].orders = h
         }
         setFilteredDataBackToday(backOrders)
         for(let i =0 ;i< historicalOrders.length; i++){
-          console.log(historicalOrders[i].orders)
+          (historicalOrders[i].orders)
           const h = historicalOrders[i].orders.filter((additional) => {
             return additional.id !== idProductRef2.current})
             historicalOrders[i].orders = h
         }
         setHistoricalOrders(historicalOrders)
         for(let i =0 ;i< historicalOrders.length; i++){
-          console.log(historicalOrders[i].orders)
+          (historicalOrders[i].orders)
           const h = historicalOrders[i].orders.filter((additional) => {
             return additional.id !== idProductRef2.current})
             historicalOrders[i].orders = h
         }
         setFilteredDataHistorical(historicalOrders)
         for(let i =0 ;i< todayOrders.length; i++){
-          console.log(todayOrders[i].orders)
+          (todayOrders[i].orders)
           const h = todayOrders[i].orders.filter((additional) => {
             return additional.id !== idProductRef2.current})
             todayOrders[i].orders = h
         }
         setTodayOrders(todayOrders)
         for(let i =0 ;i< todayOrders.length; i++){
-          console.log(todayOrders[i].orders)
+          (todayOrders[i].orders)
           const h = todayOrders[i].orders.filter((additional) => {
             return additional.id !== idProductRef2.current})
             todayOrders[i].orders = h
@@ -215,12 +215,12 @@ const handleDelete3 = (id) => {
 
   const areUSureDelete3 = (choose) => {
     if (choose) {
-      console.log(idProductRef3)
+      (idProductRef3)
         OrderService.deleteOrder(idProductRef3.current).then(response => { 
-          console.log(response)
+          (response)
         })
         .catch(error => {
-            console.log(error.response)
+            (error.response)
         });
         // setOrders(orders.map(order => order.orders.filter((additional) => {
         // return additional.id !== idProductRef3.current})))
@@ -241,56 +241,56 @@ const handleDelete3 = (id) => {
       // setOrders(orders.orders.filter((additional) => {
       //   return additional.id !== idProductRef2.current;}))
       for(let i =0 ;i< orders.length; i++){
-        console.log(orders[i].orders)
+        (orders[i].orders)
         const h = orders[i].orders.filter((additional) => {
           return additional.id !== idProductRef2.current})
         orders[i].orders = h
       }
       setOrders(orders)
       for(let i =0 ;i< orders.length; i++){
-        console.log(orders[i].orders)
+        (orders[i].orders)
         const h = orders[i].orders.filter((additional) => {
           return additional.id !== idProductRef2.current})
         orders[i].orders = h
       }
       setFilteredData(orders)
       for(let i =0 ;i< backOrders.length; i++){
-        console.log(backOrders[i].orders)
+        (backOrders[i].orders)
         const h = backOrders[i].orders.filter((additional) => {
           return additional.id !== idProductRef2.current})
           backOrders[i].orders = h
       }
       setBackOrders(backOrders)
       for(let i =0 ;i< backOrders.length; i++){
-        console.log(backOrders[i].orders)
+        (backOrders[i].orders)
         const h = backOrders[i].orders.filter((additional) => {
           return additional.id !== idProductRef2.current})
           backOrders[i].orders = h
       }
       setFilteredDataBackToday(backOrders)
       for(let i =0 ;i< historicalOrders.length; i++){
-        console.log(historicalOrders[i].orders)
+        (historicalOrders[i].orders)
         const h = historicalOrders[i].orders.filter((additional) => {
           return additional.id !== idProductRef2.current})
           historicalOrders[i].orders = h
       }
       setHistoricalOrders(historicalOrders)
       for(let i =0 ;i< historicalOrders.length; i++){
-        console.log(historicalOrders[i].orders)
+        (historicalOrders[i].orders)
         const h = historicalOrders[i].orders.filter((additional) => {
           return additional.id !== idProductRef2.current})
           historicalOrders[i].orders = h
       }
       setFilteredDataHistorical(historicalOrders)
       for(let i =0 ;i< todayOrders.length; i++){
-        console.log(todayOrders[i].orders)
+        (todayOrders[i].orders)
         const h = todayOrders[i].orders.filter((additional) => {
           return additional.id !== idProductRef2.current})
           todayOrders[i].orders = h
       }
       setTodayOrders(todayOrders)
       for(let i =0 ;i< todayOrders.length; i++){
-        console.log(todayOrders[i].orders)
+        (todayOrders[i].orders)
         const h = todayOrders[i].orders.filter((additional) => {
           return additional.id !== idProductRef2.current})
           todayOrders[i].orders = h
@@ -324,18 +324,18 @@ const handleDelete3 = (id) => {
         } else if (selectedOption.value === "Cena malejąco") {
             const response1 = await FullOrderService.sortByPrizeDescending();
             setFilteredDataRentToday(response1.data);
-            console.log("pd"+response1.data)
+            ("pd"+response1.data)
         } else if (selectedOption.value === "Data i godzina złożenia zamówienia rosnąco") {
           const response2 = await FullOrderService.sortByLaunchDateAscending();
           setFilteredDataRentToday(response2.data);
-          console.log("dt"+response2.data)
+          ("dt"+response2.data)
         } else if (selectedOption.value === "Data i godzina złożenia zamówienia malejąco") {
           const response3 = await OrderService.sortByLaunchDateDescending();
           setFilteredDataRentToday(response3.data);
-          console.log("dtt"+response3.data)
+          ("dtt"+response3.data)
         }
         } catch (error) {
-          console.log(error);
+          (error);
         }
         setLoading(false);
       };
@@ -352,18 +352,18 @@ const handleDelete3 = (id) => {
         } else if (selectedOption1.value === "Cena malejąco") {
             const response1 = await FullOrderService.sortByPrizeDescending();
             setFilteredDataBackToday(response1.data);
-            console.log("pd"+response1.data)
+            ("pd"+response1.data)
         } else if (selectedOption1.value === "Data i godzina złożenia zamówienia rosnąco") {
           const response2 = await FullOrderService.sortByLaunchDateAscending();
           setFilteredDataBackToday(response2.data);
-          console.log("dt"+response2.data)
+          ("dt"+response2.data)
         } else if (selectedOption1.value === "Data i godzina złożenia zamówienia malejąco") {
           const response3 = await OrderService.sortByLaunchDateDescending();
           setFilteredDataBackToday(response3.data);
-          console.log("dtt"+response3.data)
+          ("dtt"+response3.data)
         }
         } catch (error) {
-          console.log(error);
+          (error);
         }
         setLoading(false);
       };
@@ -380,18 +380,18 @@ const handleDelete3 = (id) => {
         } else if (selectedOption2.value === "Cena malejąco") {
             const response1 = await FullOrderService.sortByPrizeDescending();
             setOrders(response1.data);
-            console.log("pd"+response1.data)
+            ("pd"+response1.data)
         } else if (selectedOption2.value === "Data i godzina złożenia zamówienia rosnąco") {
           const response2 = await FullOrderService.sortByLaunchDateAscending();
           setOrders(response2.data);
-          console.log("dt"+response2.data)
+          ("dt"+response2.data)
         } else if (selectedOption2.value === "Data i godzina złożenia zamówienia malejąco") {
           const response3 = await FullOrderService.sortByLaunchDateDescending();
           setOrders(response3.data);
-          console.log("dtt"+response3.data)
+          ("dtt"+response3.data)
         }
         } catch (error) {
-          console.log(error);
+          (error);
         }
         setLoading(false);
       };
@@ -408,18 +408,18 @@ const handleDelete3 = (id) => {
         } else if (selectedOption.value === "Cena malejąco") {
             const response1 = await FullOrderService.sortByPrizeDescending();
             setFilteredDataHistorical(response1.data);
-            console.log("pd"+response1.data)
+            ("pd"+response1.data)
         } else if (selectedOption.value === "Data i godzina złożenia zamówienia rosnąco") {
           const response2 = await FullOrderService.sortByLaunchDateAscending();
           setFilteredDataHistorical(response2.data);
-          console.log("dt"+response2.data)
+          ("dt"+response2.data)
         } else if (selectedOption.value === "Data i godzina złożenia zamówienia malejąco") {
           const response3 = await OrderService.sortByLaunchDateDescending();
           setFilteredDataHistorical(response3.data);
-          console.log("dtt"+response3.data)
+          ("dtt"+response3.data)
         }
         } catch (error) {
-          console.log(error);
+          (error);
         }
         setLoading(false);
       };
@@ -444,25 +444,25 @@ const handleDelete3 = (id) => {
             const response = await FullOrderService.getActiveOrders()
             setOrders(response.data);
             setFilteredData(response.data)
-            console.log("el1"+ response.data)
+            ("el1"+ response.data)
             const response2 = await FullOrderService.getFullOrdersRentToday()
             setTodayOrders(response2.data);
             setFilteredDataRentToday(response2.data)
-            console.log("el12"+ response2.data)
+            ("el12"+ response2.data)
 
             const response3 = await FullOrderService.getFullOrdersBackToday()
             setFilteredDataBackToday(response3.data);
             setBackOrders(response3.data)
-            console.log("el13"+ response3.data)
+            ("el13"+ response3.data)
 
             const response4 = await FullOrderService.getFullOrders()
             setFilteredDataHistorical(response4.data);
             setHistoricalOrders(response4.data);
-            console.log("el14"+ response4.data)
+            ("el14"+ response4.data)
 
-            console.log(response.data)
+            (response.data)
           } catch (error) {
-            console.log(error);
+            (error);
           }
           setLoading(false);
         };
@@ -514,9 +514,9 @@ const handleDelete3 = (id) => {
           try {
             const response = await OrderService.getByKeyword(wordEntered)  
             setFilteredDataRentToday(response.data)
-            console.log(response.data)
+            (response.data)
           } catch (error) {
-            console.log(error);
+            (error);
           }
           setLoading(false);
         };
@@ -543,9 +543,9 @@ const handleDelete3 = (id) => {
           try {
             const response = await FullOrderService.getByKeyword(wordEntered3)  
             setFilteredDataHistorical(response.data)
-            console.log(response.data)
+            (response.data)
           } catch (error) {
-            console.log(error);
+            (error);
           }
           setLoading(false);
         };
@@ -558,7 +558,7 @@ const handleDelete3 = (id) => {
         // const newFilter = orders.filter((value) => {
         //   return value.name.toLowerCase().includes(searchWord.toLowerCase());
         // });
-        console.log(orders)
+        (orders)
         if (searchWord === "") {
           setFilteredData(orders);
         }
@@ -573,9 +573,9 @@ const handleDelete3 = (id) => {
           try {
             const response = await FullOrderService.getByKeyword(wordEntered2)  
             setFilteredData(response.data)
-            console.log(response.data)
+            (response.data)
           } catch (error) {
-            console.log(error);
+            (error);
           }
           setLoading(false);
         };
@@ -597,14 +597,14 @@ const handleDelete3 = (id) => {
       setLoading(true);
       try {
         const user = await AuthService.getCurrentUser();
-        console.log("u"+user)
+        ("u"+user)
         const response = await UserService.findByEmail(user.email)
         setUser(response.data);
-        console.log(user)
-        // user.roles.map(e => console.log(e.name))
-        console.log("Halo"+response.data)
+        (user)
+        // user.roles.map(e => (e.name))
+        ("Halo"+response.data)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };

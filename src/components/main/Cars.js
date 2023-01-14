@@ -55,57 +55,57 @@ export function Cars(){
       } else if (selectedOption.value === "Moc malejąco") {
           const response = await CarService.sortByKmDescending("SPORT");
           setFilteredData(response.data);
-          console.log(response.data)
+          (response.data)
       } else if (selectedOption.value === "Moment obrotowy rosnąco") {
         const response = await CarService.sortByNmAscending("SPORT");
         setFilteredData(response.data);
-        console.log(response.data)
+        (response.data)
       } else if (selectedOption.value === "Moment obrotowy malejąco") {
         const response = await CarService.sortByNmDescending("SPORT");
         setFilteredData(response.data);
-        console.log(response.data)
+        (response.data)
       } else if (selectedOption.value === "Spalanie w mieście rosnąco") {
         const response = await CarService.sortByCombustionAscending("SPORT");
         setFilteredData(response.data);
-        console.log(response.data)
+        (response.data)
       } else if (selectedOption.value === "Spalanie w mieście malejąco") {
         const response = await CarService.sortByCombustionDescending("SPORT");
         setFilteredData(response.data);
-        console.log(response.data)}
+        (response.data)}
       else if (selectedOption.value === "Pojemność silnika rosnąco") {
         const response = await CarService.sortByEngineAscending("SPORT");
         setFilteredData(response.data);
-        console.log(response.data)}
+        (response.data)}
       else if (selectedOption.value === "Pojemność silnika malejąco") {
         const response = await CarService.sortByEngineDescending("SPORT");
         setFilteredData(response.data);
-        console.log(response.data)}
+        (response.data)}
       else if (selectedOption.value === "Kaucja rosnąco") {
         const response = await CarService.sortByDepositAscending("SPORT");
         setFilteredData(response.data);
-        console.log(response.data)}
+        (response.data)}
       else if (selectedOption.value === "Kaucja malejąco") {
         const response = await CarService.sortByDepositDescending("SPORT");
         setFilteredData(response.data);
-        console.log(response.data)}
+        (response.data)}
       else if (selectedOption.value === "Rok produkcji rosnąco") {
         const response = await CarService.sortByYearAscending("SPORT");
         setFilteredData(response.data);
-        console.log(response.data)}
+        (response.data)}
       else if (selectedOption.value === "Rok produkcji malejąco") {
         const response = await CarService.sortByYearDescending("SPORT");
         setFilteredData(response.data);
-        console.log(response.data)}
+        (response.data)}
       else if (selectedOption.value === "Liczba miejsc rosnąco") {
         const response = await CarService.sortByNumberOfSeatsAscending("SPORT");
         setFilteredData(response.data);
-        console.log(response.data)}
+        (response.data)}
       else if (selectedOption.value === "Liczba miejsc malejąco") {
         const response = await CarService.sortByNumberOfSeatsDescending("SPORT");
         setFilteredData(response.data);
-        console.log(response.data)}
+        (response.data)}
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -132,10 +132,10 @@ export function Cars(){
       const areUSureDelete = (choose) => {
         if (choose) {
             CarService.deleteCar(idProductRef.current).then(response => { 
-              console.log(response)
+              (response)
             })
             .catch(error => {
-                console.log(error.response)
+                (error.response)
             });
           setCars(cars.filter((car) => {
             return car.id !== idProductRef.current;
@@ -223,7 +223,7 @@ export function Cars(){
     }
     const [loading,setLoading] = useState(true)
     const handleEdit = (id) => {
-        console.log(showTab[id])
+        (showTab[id])
         if(show === false){
           setShow(true)
           document.getElementById("first"+id).hidden = true
@@ -316,7 +316,7 @@ export function Cars(){
             setFilteredData(response.data)
             
           } catch (error) {
-            console.log(error);
+            (error);
           }
           setLoading(false);
         };
@@ -331,9 +331,9 @@ export function Cars(){
             const response = await CarService.getByKeyword(wordEntered)
             
             setFilteredData(response.data)
-            console.log(response.data)
+            (response.data)
           } catch (error) {
-            console.log(error);
+            (error);
           }
           setLoading(false);
         };
@@ -346,13 +346,13 @@ export function Cars(){
         user.taken = false
         CarService.updateCar(user.id,user)
         .then((response) => {
-          console.log(response)
+          (response)
           // const tab = cars
           // for(let i=0;i<tab.length;i++){
           //   if(tab[i].id == user.id){
           //     tab[i].taken = false
           //   }
-          //   console.log(tab[i])
+          //   (tab[i])
 
           // }
           const newA = cars.map(obj => {
@@ -370,22 +370,22 @@ export function Cars(){
           setFilteredData(newA)
         })
         .catch((error) => {
-        console.log(error);
+        (error);
         }); 
       }
   
       const block = (user) => {
-        console.log(user)
+        (user)
         user.taken = true
         CarService.updateCar(user.id,user)
         .then((response) => {
-          console.log(response)
+          (response)
           // const tab = cars
           // for(let i=0;i<tab.length;i++){
           //   if(tab[i].id == user.id){
           //     tab[i].taken = true
           //   }
-          //   console.log(tab[i])
+          //   (tab[i])
           // }
           const newA = cars.map(obj => {
 
@@ -402,7 +402,7 @@ export function Cars(){
           setFilteredData(newA)
         })
         .catch((error) => {
-        console.log(error);
+        (error);
         });
         // window.onload
       }
@@ -421,7 +421,7 @@ export function Cars(){
         // }
       };
       const scrollToTop = () => {
-        console.log("h")
+        ("h")
         window.scroll({
           top: 0,
           behavior: 'smooth'
@@ -436,8 +436,8 @@ export function Cars(){
   //   const response = await UserService.findByEmail(id)
   //       setUser(response.data)
   // if(user != null){
-  // console.log("U"+user)
-  // console.log(user.email)
+  // ("U"+user)
+  // (user.email)
   // setId(user.email)
   // } 
   // }, []);
@@ -448,14 +448,14 @@ export function Cars(){
       setLoading(true);
       try {
         const user = await AuthService.getCurrentUser();
-        console.log("u"+user)
+        ("u"+user)
         const response = await UserService.findByEmail(user.email)
         setUser(response.data);
-        console.log(user)
-        user.roles.map(e => console.log(e.name))
-        console.log("Halo"+response.data)
+        (user)
+        user.roles.map(e => (e.name))
+        ("Halo"+response.data)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -537,11 +537,11 @@ export function Cars(){
                   car.fault = ''
                   CarService.updateCar(car.id,car)
                   .then((response) => {
-                  console.log(response);
+                  (response);
                   const tab = cars
                     // for(let i=0;i<tab.length;i++){
                     //   if(tab[i].id == car.id){
-                    //     console.log(tab[i])
+                    //     (tab[i])
                     //     tab[i].price = fields.editPrize
                     //     tab[i].points = fields.editPoints
                     //   }
@@ -563,7 +563,7 @@ export function Cars(){
                     setFilteredData(newA)
                   })
                   .catch((error) => {
-                  console.log(error);
+                  (error);
                   })}}
                 render={({ errors, status, touched }) => (
                   <Form>

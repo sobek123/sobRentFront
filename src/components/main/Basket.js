@@ -43,15 +43,15 @@ export function Basket(){
  const handleSubmit = (values) => {
   var rP
   var bP
-  console.log("opcje"+items)
+  ("opcje"+items)
   values.map(order => {
-    console.log(order.prize)
-    console.log(order.rentPlace)
+    (order.prize)
+    (order.rentPlace)
 
       rP = order.rentPlace
       bP = order.backPlace
       order.car.taken = true
-      console.log("e" + order.rentPlace + order.backPlace)
+      ("e" + order.rentPlace + order.backPlace)
       if(order.rentPlace === 'Białystok, ul. Czesława Miłosza 2, Atrium Biała(parking podziemny)' || order.backPlace === 'Białystok, ul. Czesława Miłosza 2, Atrium Biała(parking podziemny)'){
         order.rentPlace = 'FIRST'
         order.backPlace = 'FIRST'
@@ -64,9 +64,9 @@ export function Basket(){
         order.rentPlace = 'THIRD'
         order.backPlace = 'THIRD'
       }
-      console.log("halo" + order.rentPlace + order.backPlace)
-      console.log("sD"+order.startDate)
-      console.log("eD"+order.endDate)
+      ("halo" + order.rentPlace + order.backPlace)
+      ("sD"+order.startDate)
+      ("eD"+order.endDate)
 
     // order.startDate = new Date('2022-10-10')
     // order.endDate = new Date('2022-11-11')
@@ -84,10 +84,10 @@ export function Basket(){
 
   
   // array.push(values)
-  console.log(array)
+  (array)
         FullOrderService.saveFullOrder(array)
         .then((response) => {
-        console.log(response);
+        (response);
         setShow(false)
     setModalShow(true)
         deleteItems()
@@ -102,7 +102,7 @@ export function Basket(){
         
         })
         .catch((error) => {
-        console.log(error);
+        (error);
         });
     // order.rentPlace = rP
     // order.backPlace=bP
@@ -132,7 +132,7 @@ export function Basket(){
 
   const minusDL = () => {
     pri = pri - pri * 0.1
-    console.log(pri)
+    (pri)
 
     if(new Date().getHours() < 14 && new Date().getHours() > 10){
       pri = pri - pri * 0.1
@@ -169,7 +169,7 @@ export function Basket(){
 
   if(new Date().getHours() < 14 && new Date().getHours() > 10){
     pri = pri - pri * 0.1
-    console.log(pri)
+    (pri)
     document.getElementById("prize").innerHTML = '<h5 style={{marginLeft: 80}} id="prize"><b>Suma: '+pri+'zł</b></h5>'
 
   document.getElementById("proms").hidden = false
@@ -219,11 +219,11 @@ export function Basket(){
       
       UserService.minusPoints(user,points)
         .then((response) => {
-          console.log(response)
+          (response)
           
         })
         .catch((error) => {
-        console.log(error);
+        (error);
         }); 
     }
     else if(points == 50000){
@@ -245,11 +245,11 @@ export function Basket(){
       }
       UserService.minusPoints(user,points)
       .then((response) => {
-        console.log(response)
+        (response)
         
       })
       .catch((error) => {
-      console.log(error);
+      (error);
       }); 
     }
     else if(points == 25000){
@@ -269,11 +269,11 @@ export function Basket(){
       }
       UserService.minusPoints(user,points)
       .then((response) => {
-        console.log(response)
+        (response)
         
       })
       .catch((error) => {
-      console.log(error);
+      (error);
       }); 
     }else{
       pri = pri - pri * 0.05
@@ -293,26 +293,26 @@ export function Basket(){
       }
       UserService.minusPoints(user,points)
       .then((response) => {
-        console.log(response)
+        (response)
         
       })
       .catch((error) => {
-      console.log(error);
+      (error);
       }); 
     }
 
-    console.log(user.card)
-    console.log(user.card.points)
+    (user.card)
+    (user.card.points)
 
     
     
     // UserService.updateUser(user,points)
     // .then((response) => {
-    // console.log(response);
+    // (response);
     // // navigaye("/sport");
     // })
     // .catch((error) => {
-    // console.log(error);
+    // (error);
     // });
    
 
@@ -326,14 +326,14 @@ export function Basket(){
       setLoading(true);
       try {
         const user = await AuthService.getCurrentUser();
-        console.log("u"+user)
+        ("u"+user)
         const response = await UserService.findByEmail(user.email)
         setUser(response.data);
-        console.log(user)
-        user.roles.map(e => console.log(e.name))
-        console.log("Halo"+response.data)
+        (user)
+        user.roles.map(e => (e.name))
+        ("Halo"+response.data)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };

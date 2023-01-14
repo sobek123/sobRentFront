@@ -38,10 +38,10 @@ const handleDelete = (id) => {
   const areUSureDelete = (choose) => {
     if (choose) {
         AdditionalService.deleteAdditional(idProductRef.current).then(response => { 
-          console.log(response)
+          (response)
         })
         .catch(error => {
-            console.log(error.response)
+            (error.response)
         });
       setAdditionals(additionals.filter((additional) => {
         return additional.id !== idProductRef.current;
@@ -69,10 +69,10 @@ const handleDelete = (id) => {
   const handleAdd = () => {
     AdditionalService.addAdditional({name: name, prize: prize})
         .then((response) => {
-        console.log(response);
+        (response);
         })
         .catch((error) => {
-        console.log(error);
+        (error);
         });
         additionals.push({name: name, prize: prize})
     setShow(false)
@@ -137,11 +137,11 @@ const handleDelete = (id) => {
   const handleAcceptEdit = (id) => {
     AdditionalService.editAdditional(id,{name: name, prize: prize})
         .then((response) => {
-        console.log(response);
+        (response);
         // const tab = additionals
         // for(let i=0;i<additionals.length;i++){
         //   if(additionals[i].id == id){
-        //     console.log(additionals[i])
+        //     (additionals[i])
             
         //     additionals[i].prize = Number(prize)
         //   }
@@ -157,13 +157,13 @@ const handleDelete = (id) => {
           return obj;
           
           })
-        // console.log(tab)
+        // (tab)
         
         setAdditionals(newA)
         // additionals.find(el => el.name === name).
         })
         .catch((error) => {
-        console.log(error);
+        (error);
         });
         
 
@@ -223,9 +223,9 @@ const handleDelete = (id) => {
         setCargoCars(response5.data);
         const response6 = await CarService.getCarsSport();
         setSportCars(response6.data);
-        console.log(response.data)
+        (response.data)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -243,14 +243,14 @@ const handleDelete = (id) => {
       setLoading(true);
       try {
         const user = await AuthService.getCurrentUser();
-        console.log("u"+user)
+        ("u"+user)
         const response = await UserService.findByEmail(user.email)
         setUser(response.data);
-        console.log(user)
-        user.roles.map(e => console.log(e.name))
-        console.log("Halo"+response.data)
+        (user)
+        user.roles.map(e => (e.name))
+        ("Halo"+response.data)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };

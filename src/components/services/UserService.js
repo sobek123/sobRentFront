@@ -47,7 +47,7 @@ class UserService{
     findByPassword(password){
         const user = AuthService.getCurrentUser();   
       
-        console.log(user.email)
+        (user.email)
         return axios.get(USER_API_BASE_URL+"/checkPassword", {params: {password: password, email:user.email}})
     }
 
@@ -79,7 +79,7 @@ class UserService{
       }
 
       findByEmail(email){
-        // console.log("in"+email)
+        // ("in"+email)
         return axios.get(USER_API_BASE_URL+"/findByEmail", {params: {email: email}})
       }
 

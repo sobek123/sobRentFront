@@ -68,14 +68,14 @@ export function Contact(){
                     acceptTerms: Yup.bool().oneOf([true], "Wyrażenie zogdy na przetwarzanie danych osobowych jest wymagane")
                 })}
                 onSubmit={fields => {
-                    console.log(fields)
+                    (fields)
                     // fields.acceptTerms = null
                     ContactService.addContact(fields).then((response) => {
-                        console.log(response);
+                        (response);
                         // navigaye("/sport");
                         })
                         .catch((error) => {
-                        console.log(error);
+                        (error);
                         });
                 }}>
                 {({ dirty, isValid, values, handleChange, handleBlur,errors,touched }) => {

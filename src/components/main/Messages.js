@@ -36,7 +36,7 @@ export function Messages(){
   const [expandedId, setExpandedId] = React.useState(-1);
 
   const scrollToTop = () => {
-    console.log("h")
+    ("h")
     window.scroll({
       top: 0,
       behavior: 'smooth'
@@ -46,19 +46,19 @@ export function Messages(){
   const handleExpandClick = i => {
     setExpandedId(expandedId === i ? -1 : i);
   };
-  console.log("Witam")
+  ("Witam")
 
     useEffect(() => {
         const fetchData = async () => {
           setLoading(true);
           try {
-            console.log("halo");
+            ("halo");
 
             const response = await ContactService.getContacts();
-            console.log(response.data)
+            (response.data)
             setMessages(response.data);
           } catch (error) {
-            console.log(error);
+            (error);
           }
           setLoading(false);
         };
@@ -67,7 +67,7 @@ export function Messages(){
       function formatD(date){
         let m =  date.getMonth()+1
         var min = ""
-        console.log(min)
+        (min)
         if(date.getMinutes() < 10){
           min = "0"+date.getMinutes()
         }else{
@@ -78,11 +78,11 @@ export function Messages(){
       // messages.map((msg,index) => {
       //   msg.opened = true
       //   ContactService.setOpened({msg}).then((response) => {
-      //     console.log(response);
+      //     (response);
       //     // navigaye("/sport");
       //     })
       //     .catch((error) => {
-      //     console.log(error);
+      //     (error);
       //     });
       // })
 
@@ -97,14 +97,14 @@ export function Messages(){
       setLoading(true);
       try {
         const user = await AuthService.getCurrentUser();
-        console.log("u"+user)
+        ("u"+user)
         const response = await UserService.findByEmail(user.email)
         setUser(response.data);
-        console.log(user)
-        user.roles.map(e => console.log(e.name))
-        console.log("Halo"+response.data)
+        (user)
+        user.roles.map(e => (e.name))
+        ("Halo"+response.data)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -139,11 +139,11 @@ export function Messages(){
                 handleExpandClick(i)
                 message.opened = true
                 ContactService.setOpened(message).then((response) => {
-                  console.log(message)
-                      console.log(response);
+                  (message)
+                      (response);
                       })
                       .catch((error) => {
-                      console.log(error);
+                      (error);
                       });
               }}
                aria-expanded={expandedId === i}
@@ -168,14 +168,14 @@ export function Messages(){
                         .required('Temat jest wymagany')
                 })}
                 onSubmit={fields => {
-                    console.log(fields)
+                    (fields)
                     // fields.acceptTerms = null
                     UserService.respond(user.email, fields.content,fields.title, message.email).then((response) => {
-                        console.log(response);
+                        (response);
                         handleExpandClick(i)
                         })
                         .catch((error) => {
-                        console.log(error);
+                        (error);
                         });
                 }}>
                 {({ dirty, isValid, values, handleChange, handleBlur,errors,touched }) => {
@@ -239,12 +239,12 @@ export function Messages(){
                         .required('Temat jest wymagany')
                 })}
                 onSubmit={fields => {
-                    console.log(fields)
+                    (fields)
                            UserService.respond(user.email, fields.content,fields.title, message.email).then((response) => {
-                        console.log(response);
+                        (response);
                         })
                         .catch((error) => {
-                        console.log(error);
+                        (error);
                         });
                 }}>
                 {({ dirty, isValid, values, handleChange, handleBlur,errors,touched }) => {

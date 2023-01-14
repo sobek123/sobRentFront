@@ -66,7 +66,7 @@ export function Users(){
           setFilteredData(response.data);
         }
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -76,7 +76,7 @@ export function Users(){
   const [wordEntered, setWordEntered] = useState(null);
 
   const scrollToTop = () => {
-    console.log("h")
+    ("h")
     window.scroll({
       top: 0,
       behavior: 'smooth'
@@ -90,9 +90,9 @@ export function Users(){
         
         setFilteredData(response.data)
         // setShowHook(showTab)
-        console.log(response.data)
+        (response.data)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -128,9 +128,9 @@ export function Users(){
           const response = await UserService.getUsers()
           setUsers(response.data);
           setFilteredData(response.data)
-          console.log(response.data)
+          (response.data)
         } catch (error) {
-          console.log(error);
+          (error);
         }
         setLoading(false);
       };
@@ -143,7 +143,7 @@ export function Users(){
       user.enabled = true
       UserService.updateUser(user,user.id)
       .then((response) => {
-      console.log(response);
+      (response);
         // const tab = users
         //   for(let i=0;i<tab.length;i++){
         //     if(tab[i].id == user.id){
@@ -165,7 +165,7 @@ export function Users(){
           setFilteredData(newA)
       })
       .catch((error) => {
-      console.log(error);
+      (error);
       });
         
     }
@@ -177,14 +177,14 @@ export function Users(){
           setLoading(true);
           try {
             const user = await AuthService.getCurrentUser();
-            console.log("u"+user)
+            ("u"+user)
             const response = await UserService.findByEmail(user.email)
             setCurrentUser(response.data);
-            console.log("Ez"+user)
-            // user.roles.map(e => console.log(e.name))
-            console.log("Halo"+response.data)
+            ("Ez"+user)
+            // user.roles.map(e => (e.name))
+            ("Halo"+response.data)
           } catch (error) {
-            console.log(error);
+            (error);
           }
           setLoading(false);
         };
@@ -196,7 +196,7 @@ export function Users(){
       user.enabled = false
       UserService.updateUser(user,user.id)
       .then((response) => {
-      console.log(response);
+      (response);
           const newA = users.map(obj => {
             if (obj.id == id) {
             return {obj, enabled: false};
@@ -207,7 +207,7 @@ export function Users(){
           setFilteredData(newA)
       })
       .catch((error) => {
-      console.log(error);
+      (error);
       });
     }
 
@@ -300,14 +300,14 @@ export function Users(){
                         .required("Temat jest wymagany")
                 })}
                 onSubmit={fields => {
-                    console.log(fields)
+                    (fields)
                     // fields.acceptTerms = null
                     UserService.respond(currentUser.email, fields.content,fields.title, user.email).then((response) => {
-                        console.log(response);
+                        (response);
                         // navigaye("/sport");
                         })
                         .catch((error) => {
-                        console.log(error);
+                        (error);
                         });
                 }}>
                 {({ dirty, isValid, values, handleChange, handleBlur,errors,touched }) => {

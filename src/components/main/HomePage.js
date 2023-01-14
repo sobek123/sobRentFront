@@ -36,9 +36,9 @@ export function HomePage(props){
           try {
             const response = await OrderService.getPlaces()
             setPlaces(response.data);
-            console.log(response.data)
+            (response.data)
           } catch (error) {
-            console.log(error);
+            (error);
           }
           setLoading(false);
         };
@@ -50,7 +50,7 @@ export function HomePage(props){
       CarService.getCarsByStartDateAndEndDateAndRentPlaceAndEndDate(values.startDate, values.endDate)
         .then((response) => {
         setCars(response.data)
-        console.log(response.data)
+        (response.data)
         updateOffer(response.data, values.startDate, values.endDate)
         deleteItems()
         navigate("/oferta")
@@ -58,7 +58,7 @@ export function HomePage(props){
 
         })
         .catch((error) => {
-        console.log(error);
+        (error);
         });
     }, [values]);
     const [isActive, setIsActive] = useState(false);
@@ -102,7 +102,7 @@ export function HomePage(props){
                         // setCars(response.data);
                         // return <Offer cars={cars}></Offer>
                         setValues(fields)
-                        console.log(values)
+                        (values)
                         
                         // CarService.getCarsByStartDateAndEndDateAndRentPlaceAndEndDate(values.startDate, values.endDate)
                         // .then((response) => {
@@ -111,9 +111,9 @@ export function HomePage(props){
 
                         // })
                         // .catch((error) => {
-                        // console.log(error);
+                        // (error);
                         // });
-                        // console.log(response.data)
+                        // (response.data)
                       
                     
                 }}>

@@ -36,7 +36,7 @@ export function OrderModal(props){
     additionals.map(additional => {
       options[additional.id - 1] = {value: additional.prize, label: additional.name + " - " + additional.prize + "zł"}
     })
-    // console.log(sh)
+    // (sh)
 
     useEffect(() => {
       // const user = CarService.checkCar()
@@ -48,17 +48,17 @@ export function OrderModal(props){
       //     document.getElementById("msg").hidden = true
         
       //   }
-      //   console.log(sh)
-      //   console.log(response)
+      //   (sh)
+      //   (response)
       // })
-      // .catch(error => console.log(error))
+      // .catch(error => (error))
       if( stDate != '' && edDate != ''){
-        console.log(stDate)
-        console.log(edDate)
+        (stDate)
+        (edDate)
       const diffTime = Math.abs(new Date(stDate) - new Date(edDate));
           const days = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
           var calculateCost = 0
-          console.log(days)
+          (days)
           if(days === 1 && days===0){
             calculateCost = props.prize.firstPeriod + props.prize.deposit
           }
@@ -77,7 +77,7 @@ export function OrderModal(props){
           else if(days >= 29){
               calculateCost = days * props.prize.sixthPeriod + props.prize.deposit
           }
-          console.log(ad)
+          (ad)
           let cost = document.getElementById("cost")
           if(cost){
             // if(additionalss.length !=0){
@@ -94,7 +94,7 @@ export function OrderModal(props){
     }, [stDate,edDate,ad]);
 
     // setAdditionals(additionalss)
-      // console.log("Opcje" + options)
+      // ("Opcje" + options)
     useEffect(() => {
         const fetchData = async () => {
           setLoading(true);
@@ -103,11 +103,11 @@ export function OrderModal(props){
             setPlaces(response.data);
             const response2 = await AdditionalService.getAdditionals()
             setAdditionals(response2.data);
-            console.log(response.data)
+            (response.data)
             setStDate('')
             setEdDate('')
           } catch (error) {
-            console.log(error);
+            (error);
           }
           setLoading(false);
         };
@@ -115,39 +115,39 @@ export function OrderModal(props){
       }, []);
 
       const handleChangeAd = (e) =>{
-        console.log("halo")
-        console.log("Elo"+e.target.value)
+        ("halo")
+        ("Elo"+e.target.value)
       }
 
   
 
     const handleChange1 = (e) =>{
-      // console.log(Array.isArray(e.target.value))
+      // (Array.isArray(e.target.value))
         var startDate
         var endDate
         var cCost = 0
         var pr = 0
-        // console.log(props.prize)
+        // (props.prize)
         let costt = document.getElementById("cost")
         let days2 = e.target.id
-        console.log("Eluwina")
-        console.log(e)
+        ("Eluwina")
+        (e)
         // var calculateCost = 0
-        // console.log("Halo"+days2)
+        // ("Halo"+days2)
         if(days2 === "startDate"){
           startDate = ""
-          console.log("elo")
+          ("elo")
           // setStDate(e.target.value.toString())
           
         }
         else if(days2 === "endDate"){
-          console.log("ed")
+          ("ed")
           
         }
        
        
         // else if( days2 === "additional"){
-        //   console.log(e.target.value)
+        //   (e.target.value)
         // }
     }
 
@@ -157,10 +157,10 @@ export function OrderModal(props){
       var d =e.target.id
       if(d === "startDate"){
         startDate = e.target.value
-        console.log(startDate)
-        console.log(endDate)
+        (startDate)
+        (endDate)
         if(startDate != null && endDate != null){
-          console.log("wchodze")
+          ("wchodze")
 
           let cost = document.getElementById("cost")
           let calculateCost = 0
@@ -189,10 +189,10 @@ export function OrderModal(props){
       }
       else if(d === "endDate"){
         endDate = e.target.value
-        console.log(startDate)
-        console.log(endDate)
+        (startDate)
+        (endDate)
         if(startDate != null && endDate != null){
-          console.log("wchodze")
+          ("wchodze")
         let cost = document.getElementById("cost")
         let calculateCost = 0
         const diffTime = Math.abs(new Date(startDate) - new Date(endDate));
@@ -247,12 +247,12 @@ export function OrderModal(props){
     const handleConvert = (ob) => {
       let array = []
       ob.additional.map(additional =>  {
-          console.log(additional.id)
+          (additional.id)
         array.push({name: additional.label.substring(0,additional.label.length - 8), prize: additional.value})
         setFullCost(fullCost + additional.value)
-        console.log(additional)}
+        (additional)}
         )
-        console.log(array)
+        (array)
        return array
     }
 
@@ -269,25 +269,25 @@ export function OrderModal(props){
 
       // })
       // .catch((error) => {
-      // console.log(error);
+      // (error);
       // });
-      console.log(offer)
+      (offer)
       const fil = offer.filter(el => el.id !== values.car.id)
       updateId(values.car.id)
       updateCars(fil)
-      console.log(fil)
-      console.log("IDMODALLKU"+values.car.id)
+      (fil)
+      ("IDMODALLKU"+values.car.id)
       if(values.additional.length != 0){
       values.additional = handleConvert(values)}
       else{
         values.additional=[]
       }
 
-      console.log(values.additional.length)
+      (values.additional.length)
 
       // values.prize = 0
       for(let i =0 ;i<values.additional.length;i++){
-        console.log(values.additional[i].prize)
+        (values.additional[i].prize)
         values.prize = values.prize + values.additional[i].prize
       }
       
@@ -314,11 +314,11 @@ export function OrderModal(props){
         values.prize = fullCost + values.days * props.prize.sixthPeriod + props.prize.deposit
       }
       // values.prize = fullCost
-      console.log("Cena" + values.prize)
-      console.log("Img"+values.car.image)
+      ("Cena" + values.prize)
+      ("Img"+values.car.image)
       addToCart(values)
-      console.log(values)
-      console.log(values.additional)
+      (values)
+      (values.additional)
       // {props.onHide}
       
     }
@@ -326,7 +326,7 @@ export function OrderModal(props){
 
     
     
-    // console.log(additionals)
+    // (additionals)
     return (
         
         <Modal
@@ -361,8 +361,8 @@ export function OrderModal(props){
                         ),
                         // .test("stDate", "Pojazd w tym terminie jest niedostępny", function (value) {
                         //   // setStDate(value)
-                        //   // console.log("Sthook"+stDate)
-                        //   console.log("St"+value)
+                        //   // ("Sthook"+stDate)
+                        //   ("St"+value)
                         // }),
                     endDate: Yup.date()
                         .required('Data zakończenia wynajmu jest wymagana')
@@ -375,9 +375,9 @@ export function OrderModal(props){
                           ),
                           // .test("endDate", "Pojazd w tym terminie jest niedostępny", function (value) {
                           //   // setEdDate(value)
-                          //   // console.log("Edhook"+edDate)
-                          //   console.log("st"+stDate)
-                          //   console.log("Ed"+value)
+                          //   // ("Edhook"+edDate)
+                          //   ("st"+stDate)
+                          //   ("Ed"+value)
                           // }),
                     days: Yup.number().
                         required("Ilość dni jest wymagane"),
@@ -403,8 +403,8 @@ export function OrderModal(props){
        setStDate(someValue)
       //  var calculateCost = 0
       //  if(edDate!== '' && stDate !== ''){
-      //   console.log(stDate)
-      //   console.log(edDate)
+      //   (stDate)
+      //   (edDate)
 
       // const diffTime = Math.abs(new Date(stDate) - new Date(edDate));
       // const days = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
@@ -444,7 +444,7 @@ export function OrderModal(props){
         // and do something about e
         let someValue = e.currentTarget.value
        setEdDate(someValue)
-      console.log(additionalss)
+      (additionalss)
     }} name="endDate" type="date"  fullWidth placeholder="" value={values.endDate} component={TextField} InputLabelProps={{ shrink: true }} />
                         </div>
                         <div className="form-group" style={{marginTop:20,width:500}}>
@@ -475,7 +475,7 @@ export function OrderModal(props){
                         </div>
                         <div className="form-group" style={{marginTop:20}}>
                             <Field component={SelectField}  options={options} name="additional" id="additional" onChange={e => {
-                            console.log("elo")
+                            ("elo")
                               
                               // call the built-in handleBur
                               handleChange(e)
@@ -483,7 +483,7 @@ export function OrderModal(props){
                               // and do something about e
                               let someValue = e.currentTarget.value
                              setAd(additionalss)
-                            console.log(someValue)
+                            (someValue)
                           }} />
                         </div>
 

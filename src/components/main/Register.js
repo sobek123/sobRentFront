@@ -69,12 +69,12 @@ export function Register(){
     const [loading,setLoading] = useState(false)
     const [showButton,setShowButton] = useState(true)
     const onSubmit = (values) => {
-        console.log(values)
+        (values)
         setLoading(true)
         setShowButton(false)
         UserService.saveUser(values)
         .then((response) => {
-        console.log(response);
+        (response);
         setLoading(false)
         setShowButton(true)
         // navigate("/logowanie");
@@ -86,7 +86,7 @@ export function Register(){
         // document.getElementById("error").hidden = false
         // document.getElementById("form").hidden = true
         // document.getElementById("f").hidden = false
-        console.log(error);
+        (error);
         });
       }
 
@@ -125,9 +125,9 @@ export function Register(){
                                 setEmail(response.data)
                             })
                             .catch((error) => {
-                                console.log(error);
+                                (error);
                             });
-                            // console.log(response)
+                            // (response)
 
                             return !email
                             })
@@ -149,7 +149,7 @@ export function Register(){
                             .then(response =>{
                                 setPhoneNumber(response.data)
                             })
-                            .catch(error => console.log(error))
+                            .catch(error => (error))
 
                             return !phoneNumber
                         })
@@ -172,7 +172,7 @@ export function Register(){
                             .then(response =>{
                                 setPesel(response.data)
                             })
-                            .catch(error => console.log(error))
+                            .catch(error => (error))
 
                             return !pesel
                           })

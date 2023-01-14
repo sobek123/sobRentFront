@@ -37,11 +37,11 @@ export function SendEmail(){
                 })}
                 onSubmit={fields => {
                     UserService.processEmail(fields).then((response) => {
-                        console.log(response);
+                        (response);
                         document.getElementById("sent").hidden = false
                         })
                         .catch((error) => {
-                        console.log(error);
+                        (error);
                         });
                 }}> {({ dirty, isValid, values, handleChange, handleBlur, errors, status, touched }) => {
                     return (
@@ -78,11 +78,11 @@ export function SendEmail(){
                     
                 })}
                 onSubmit={fields => {
-                    console.log(fields)
+                    (fields)
                     setLoading(true)
                     setShowButton(false)
                     UserService.processEmail(fields.email).then((response) => {
-                        console.log(response);
+                        (response);
                         setLoading(false)
                         setShowButton(true)
                         document.getElementById("sent").hidden = false
@@ -91,7 +91,7 @@ export function SendEmail(){
                         .catch((error) => {
                         document.getElementById("sentError").hidden = false
                         document.getElementById("sent").hidden = true
-                        console.log(error);
+                        (error);
                         });
                 }}>
                 {({ dirty, isValid, values, handleChange, handleBlur }) => {

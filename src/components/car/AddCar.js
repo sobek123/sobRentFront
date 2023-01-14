@@ -43,9 +43,9 @@ export function AddCar(){
             setPetrols(response2.data);
             const response3 = await CarService.getTransmissions();
             setTransmissions(response3.data);
-            console.log(response3.data)
+            (response3.data)
             } catch (error) {
-            console.log(error);
+            (error);
             }
             setLoading(false);
         };
@@ -55,18 +55,18 @@ export function AddCar(){
         const [file,setFile] = useState('')
    
     function handleSubmit(values){
-        console.log(values)
+        (values)
         const form = new FormData()
         values.image = ''
-        console.log(values)
+        (values)
         // form.append('file',file)
         CarService.saveCar(values)
         .then((response) => {
-        console.log(response);
+        (response);
         navigaye("/samochody");
         })
         .catch((error) => {
-        console.log(error);
+        (error);
         });
     }
     return <div>

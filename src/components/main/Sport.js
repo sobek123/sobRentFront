@@ -88,12 +88,12 @@ export function Sport(){
     const fetchData = async () => {
       setLoading(true);
       try {
-        console.log(brand)
+        (brand)
         const response = await CarService.getModelsByBrand(brand, 'SPORTOWE');
         setModels(response.data);
-        console.log("m"+response.data)
+        ("m"+response.data)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -174,7 +174,7 @@ export function Sport(){
         _DATA = response.data.filter(el => el.category === 'SPORTOWE')
         }
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -189,7 +189,7 @@ export function Sport(){
       try {
         const response = await CarService.getCarsSport();
         setCars(response.data);
-        console.log("EZ"+response.data)
+        ("EZ"+response.data)
         setInitialCars(response.data)
         const response2 = await CarService.getCategories();
         setCategories(response2.data);
@@ -203,7 +203,7 @@ export function Sport(){
         setYears(response6.data); 
         
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -231,7 +231,7 @@ export function Sport(){
           const response = await CarService.getByTransmission(ob.transmission)
         
           const fil = response.data.filter(el => el.category === 'SPORTOWE')
-          console.log(fil)
+          (fil)
           if(ob.model !== ''){
             const f = fil.filter(car => car.model === ob.model)
             setCars(f);
@@ -243,9 +243,9 @@ export function Sport(){
             }
         }else if (ob.brand == '' && ob.transmission == '' && ob.petrol != '' && ob.year == '' && ob.category == '' && ob.numberOfSeats == '') {
           const response = await CarService.getByPetrol(ob.petrol)
-          console.log("Halo")
+          ("Halo")
           const fil = response.data.filter(el => el.category === 'SPORTOWE')
-          console.log(fil)
+          (fil)
           if(ob.model !== ''){
             const f = fil.filter(car => car.model === ob.model)
             setCars(f);
@@ -272,7 +272,7 @@ export function Sport(){
           const response = await CarService.getByNumberOfSeats(ob.numberOfSeats)
           
           const fil = response.data.filter(el => el.category === 'SPORTOWE')
-          console.log(fil)
+          (fil)
           if(ob.model !== ''){
             const f = fil.filter(car => car.model === ob.model)
             setCars(f);
@@ -1029,7 +1029,7 @@ export function Sport(){
           _DATA = response.data
         }
       } catch (error) {
-        console.log(error);
+        (error);
       }
   
       setLoading(false);
@@ -1045,14 +1045,14 @@ const [id,setId] = useState('')
       setLoading(true);
       try {
         const user = await AuthService.getCurrentUser();
-        console.log("u"+user)
+        ("u"+user)
         const response = await UserService.findByEmail(user.email)
         setUser(response.data);
-        console.log(user)
-        user.roles.map(e => console.log(e.name))
-        console.log("Halo"+response.data)
+        (user)
+        user.roles.map(e => (e.name))
+        ("Halo"+response.data)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -1122,7 +1122,7 @@ const [id,setId] = useState('')
         setFilteredData(fil)
         _DATA = fil
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -1178,7 +1178,7 @@ const [id,setId] = useState('')
                 })}
                 onSubmit={
                   fields => {
-                    console.log(fields)
+                    (fields)
                     
                     setOb(fields)
                   }

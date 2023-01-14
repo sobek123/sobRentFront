@@ -85,22 +85,22 @@ export function Finances(){
       z.setDate(z.getDate() - nr + 6)
 
       t.setDate(t.getDate() - nr )
-      console.log(t.toLocaleString().indexOf(','))
-      console.log(z.toLocaleString().indexOf(','))
+      (t.toLocaleString().indexOf(','))
+      (z.toLocaleString().indexOf(','))
 
       var firstDate = t.toLocaleString().slice(0,9)
-      console.log(t.toLocaleString().slice(0,9).length)
+      (t.toLocaleString().slice(0,9).length)
       var secondDate = z.toLocaleString().slice(0,9)
 
       // t.setDate(t.getDate() + 7)
       // var secondDate = t.toLocaleString().slice(0,10)
       
     
-    console.log(nr)
+    (nr)
     const g = new Date()
-    // console.log("ez"+g.setDate(g.getDate() - nr))
-    console.log(g.toLocaleString())
-    // console.log(new Date(g.setDate(getMonday(new Date()) - nr)));
+    // ("ez"+g.setDate(g.getDate() - nr))
+    (g.toLocaleString())
+    // (new Date(g.setDate(getMonday(new Date()) - nr)));
     const [selectedOption2,setSelectedOption2] = useState('')
     const [selectedOption3,setSelectedOption3] = useState('')
     const [selectedOption4,setSelectedOption4] = useState('')
@@ -135,14 +135,14 @@ export function Finances(){
         setLoading(true);
         try {
           const user = await AuthService.getCurrentUser();
-          console.log("u"+user)
+          ("u"+user)
           const response = await UserService.findByEmail(user.email)
           setUser(response.data);
-          console.log(user)
-          user.roles.map(e => console.log(e.name))
-          console.log("Halo"+response.data)
+          (user)
+          user.roles.map(e => (e.name))
+          ("Halo"+response.data)
         } catch (error) {
-          console.log(error);
+          (error);
         }
         setLoading(false);
       };
@@ -155,9 +155,9 @@ export function Finances(){
         try {
           const response5 = await CarService.getBrands();
           setBrands(response5.data);
-          console.log(response5.data)
+          (response5.data)
         } catch (error) {
-          console.log(error);
+          (error);
         }
         setLoading(false);
       };
@@ -170,35 +170,35 @@ export function Finances(){
           try {
             const response2 = await FullOrderService.monthlyParallel()
             setMonthlyParallel(response2.data)
-            console.log("mp"+response2.data)
+            ("mp"+response2.data)
             const response3 = await OrderService.gainFromBrands()
             setGainFromBrands(response3.data)
-            console.log("Halo"+response3.data)
-            // console.log(response3.data.filter((w,index) => index == 1))
-            // response3.data.map((w,index) => console.log("Jol"+w[index])).map(w => console.log("B"+w[0]))
+            ("Halo"+response3.data)
+            // (response3.data.filter((w,index) => index == 1))
+            // response3.data.map((w,index) => ("Jol"+w[index])).map(w => ("B"+w[0]))
            let ar1 = []
            let ar2 = []
             for(let i=0;i< gainFromBrands.length;i++){
-              console.log(gainFromBrands[i][0])
-              console.log(gainFromBrands[i][1])
+              (gainFromBrands[i][0])
+              (gainFromBrands[i][1])
 
               ar1.push(gainFromBrands[i][0])
               ar2.push(gainFromBrands[i][1])
 
             }
-            console.log(ar1)
-            console.log(ar2)
+            (ar1)
+            (ar2)
             setBrandsB(ar2)
             setGains(ar1)
-            console.log(brandsB)
-            console.log(gains)
+            (brandsB)
+            (gains)
 
             
             // const response4 = await OrderService.gainFromBrands2()
             // setGainFromBrandsBr(response4.data)
-            // console.log(response4.data)
+            // (response4.data)
           } catch (error) {
-            console.log(error);
+            (error);
           }
           setLoading(false);
         };
@@ -214,9 +214,9 @@ export function Finances(){
             const response = await FullOrderService.daysFromMonth(selectedOption2.value)
             setDaysFromMonth(response.data)
             
-            console.log(response.data)
+            (response.data)
           } catch (error) {
-            console.log(error);
+            (error);
           }
           setLoading(false);
         };
@@ -227,16 +227,16 @@ export function Finances(){
         const fetchData = async () => {
           setLoading(true);
           try {
-            console.log(selectedOption4.value)
+            (selectedOption4.value)
             const response = await FullOrderService.daysFromWeek(selectedOption4.value)
             setDaysFromWeek(response.data)
-            console.log(response.data)
+            (response.data)
             // setFirstDate(Object.keys(daysFromWeek)[0].slice(1,11))
          
             // setSecondDate(Object.keys(daysFromWeek)[0].slice(73,83))
 
           } catch (error) {
-            console.log(error);
+            (error);
           }
           setLoading(false);
         };
@@ -249,16 +249,16 @@ export function Finances(){
           try {
             const response = await FullOrderService.gainFromDays(selectedOption3.value)
             setCars(response.data)
-            console.log("Wre"+response.data)
+            ("Wre"+response.data)
             // const response2 = await OrderService.gainFromDaysOrders(selectedOption3.value)
             // setCars2(response2.data)
-            // console.log(response2.data)
+            // (response2.data)
             // setFirstDate(Object.keys(daysFromWeek)[0].slice(1,11))
          
             // setSecondDate(Object.keys(daysFromWeek)[0].slice(73,83))
 
           } catch (error) {
-            console.log(error);
+            (error);
           }
           setLoading(false);
         };

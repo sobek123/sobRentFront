@@ -18,7 +18,7 @@ class ContactService{
     }
 
     setOpened(contact){
-        console.log(contact)
+        (contact)
         return axios.put(CONTACT_API_BASE_URL+"/setOpened",contact)
     }
 

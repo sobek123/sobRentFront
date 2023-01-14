@@ -38,13 +38,13 @@ export function Carts(){
     const fetchData = async () => {
       setLoading(true);
       try {
-        console.log(typeof selectedOption.value)
+        (typeof selectedOption.value)
         const response = await CarService.getMostRentedCar(selectedOption.value);
         setCar(response.data);
         
-        console.log("C"+response.data)
+        ("C"+response.data)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -57,9 +57,9 @@ export function Carts(){
       try {
         const response = await CarService.getRentedCars(selectedOption2.value)
         setCars(response.data);
-        console.log(response.data)
+        (response.data)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -72,9 +72,9 @@ export function Carts(){
       try {
         const response5 = await CarService.getBrands();
         setBrands(response5.data);
-        console.log(response5.data)
+        (response5.data)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -89,9 +89,9 @@ export function Carts(){
       try {
         const response = await CarService.getMostRentedCarBrand(selectedOption3.value)
         setMostCars(response.data);
-        console.log(response.data)
+        (response.data)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -104,9 +104,9 @@ export function Carts(){
       try {
         const response = await CarService.getRentedCarsBrand(selectedOption4.value)
         setBrandCars(response.data);
-        console.log("Br"+response.data)
+        ("Br"+response.data)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -211,14 +211,14 @@ export function Carts(){
       setLoading(true);
       try {
         const user = await AuthService.getCurrentUser();
-        console.log("u"+user)
+        ("u"+user)
         const response = await UserService.findByEmail(user.email)
         setUser(response.data);
-        console.log(user)
-        user.roles.map(e => console.log(e.name))
-        console.log("Halo"+response.data)
+        (user)
+        user.roles.map(e => (e.name))
+        ("Halo"+response.data)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };

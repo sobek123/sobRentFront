@@ -35,7 +35,7 @@ export function Login(){
                         .required('Hasło jest wymagane')
                 })}
                 onSubmit={fields => {
-                    console.log(fields)
+                    (fields)
                     setShowButton(false)
                     setLoading(true)
                     AuthService.login(fields).then(
@@ -49,7 +49,7 @@ export function Login(){
                           
                         },
                         (error) => {
-                          console.log(error);
+                          (error);
                           setShow(true)
 
                         }

@@ -52,22 +52,22 @@ export function AccountInformation(){
   }
 
   const makeCard = (user) => {
-    console.log(user.id)
-    console.log(user.email)
+    (user.id)
+    (user.email)
     const ne = UserService.makeCard(user)
     .then((response) => {
-      console.log(response);
+      (response);
       // const response2 = UserService.getUserById(user.id)
-      // console.log(response2.data)
+      // (response2.data)
       //   setUser(response2.data);
       // window.onload()
-      // console.log(ne.data)
+      // (ne.data)
       setUser(response.data)
       })
       .catch((error) => {
-      console.log(error);
+      (error);
       });
-      // console.log(ne.data)
+      // (ne.data)
 
       // setUser(ne.data)
   }
@@ -77,14 +77,14 @@ export function AccountInformation(){
       setLoading(true);
       try {
         const user = await AuthService.getCurrentUser();
-        console.log("u"+user)
+        ("u"+user)
         const response = await UserService.findByEmail(user.email)
         setUser(response.data);
-        console.log(user)
+        (user)
         
-        console.log("Halo"+response.data)
+        ("Halo"+response.data)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
@@ -144,16 +144,16 @@ export function AccountInformation(){
                   
                 }
                 onSubmit={fields => {
-                  console.log("Elo")
-                  console.log(fields)
+                  ("Elo")
+                  (fields)
                     UserService.updateUser(fields,user.id)
                     .then((response) => {
-                            console.log(response);
+                            (response);
                             // navigaye("/sport");
                             setUser(response.data)
                             })
                             .catch((error) => {
-                            console.log(error);
+                            (error);
                             });
                       setShow(false)
                 }}
@@ -226,7 +226,7 @@ export function AccountInformation(){
                       .then(response =>{
                           setPassword(response.data)
                       })
-                      .catch(error => console.log(error))
+                      .catch(error => (error))
 
                       return password
                   })
@@ -242,14 +242,14 @@ export function AccountInformation(){
                 onSubmit={fields => {
                   user.password = fields.newPassword
                     UserService.changePassword(user).then((response) => {
-                        console.log(response);
+                        (response);
                         document.getElementById("false").hidden = false
                         setTimeout( () =>
                           setShowPassword(false)
                         ,3000);
                         })
                         .catch((error) => {
-                        console.log(error);
+                        (error);
                         });
                     fields.newPassword = ''
                     fields.oldPassword = ''

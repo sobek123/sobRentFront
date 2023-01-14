@@ -39,7 +39,7 @@ export default function Navbar(){
     const {items} = useContext(CartContext)
     const {deleteFromCart} = useContext(CartContext)
     const handleDelete = (id) => {
-        console.log(id)
+        (id)
         deleteFromCart(id)
         
      }
@@ -65,9 +65,9 @@ export default function Navbar(){
         try {
           const response = await ContactService.getByOpened()
           setCars(response.data);
-          console.log(response.data)
+          (response.data)
         } catch (error) {
-          console.log(error);
+          (error);
         }
         setLoading(false);
       };
@@ -80,14 +80,14 @@ export default function Navbar(){
       setLoading(true);
       try {
         const user = await AuthService.getCurrentUser();
-        console.log("u"+user)
+        ("u"+user)
         const response = await UserService.findByEmail(user.email)
         setCurrentUser(response.data);
-        console.log(user)
-        // user.roles.map(e => console.log(e.name))
-        console.log("Halo"+response.data.roles)
+        (user)
+        // user.roles.map(e => (e.name))
+        ("Halo"+response.data.roles)
       } catch (error) {
-        console.log(error);
+        (error);
       }
       setLoading(false);
     };
